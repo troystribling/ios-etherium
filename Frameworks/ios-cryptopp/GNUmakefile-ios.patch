@@ -1,0 +1,132 @@
+--- src/GNUmakefile	2013-02-20 15:30:52.000000000 -0800
++++ GNUmakefile-ios	2014-04-14 08:18:38.000000000 -0700
+@@ -5,7 +5,7 @@
+ # the following options reduce code size, but breaks link or makes link very slow on some systems
+ # CXXFLAGS += -ffunction-sections -fdata-sections
+ # LDFLAGS += -Wl,--gc-sections
+-ARFLAGS = -cr	# ar needs the dash on OpenBSD
++ARFLAGS = crs	# ar needs the dash on OpenBSD
+ RANLIB = ranlib
+ CP = cp
+ MKDIR = mkdir
+@@ -14,8 +14,18 @@
+ ISX86 = $(shell uname -m | $(EGREP) -c "i.86|x86|i86|amd64")
+ IS_SUN_CC = $(shell $(CXX) -V 2>&1 | $(EGREP) -c "CC: Sun")
+ IS_LINUX = $(shell $(CXX) -dumpmachine 2>&1 | $(EGREP) -c "linux")
++IS_DARWIN = $(shell uname -m | $(EGREP) -i -c "Darwin")
+ IS_MINGW = $(shell $(CXX) -dumpmachine 2>&1 | $(EGREP) -c "mingw")
+-CLANG_COMPILER = $(shell $(CXX) --version 2>&1 | $(EGREP) -i -c "clang version")
++CLANG_COMPILER = $(shell $(CXX) --version 2>&1 | $(EGREP) -i -c "clang")
++
++# Set in the environment
++ifeq ($(IS_CROSS_COMPILE),1)
++  ISX86=0
++  IS_LINUX=0
++  IS_MINGW=0
++  IS_DARWIN=0
++  UNAME=CrossCompile
++endif
+ 
+ # Default prefix for make install
+ ifeq ($(PREFIX),)
+@@ -36,7 +46,7 @@
+ GAS219_OR_LATER = $(shell $(CXX) -xc -c /dev/null -Wa,-v -o/dev/null 2>&1 | $(EGREP) -c "GNU assembler version (2\.19|2\.[2-9]|[3-9])")
+ 
+ ifneq ($(GCC42_OR_LATER),0)
+-ifeq ($(UNAME),Darwin)
++ifeq ($(IS_DARWIN),1)
+ CXXFLAGS += -arch x86_64 -arch i386
+ else
+ CXXFLAGS += -march=native
+@@ -86,9 +96,9 @@
+ endif
+ endif
+ 
+-ifeq ($(UNAME),Darwin)
+-AR = libtool
+-ARFLAGS = -static -o
++ifeq ($(IS_DARWIN),1)
++AR = ar
++ARFLAGS = crs
+ CXX = c++
+ IS_GCC2 = $(shell $(CXX) -v 2>&1 | $(EGREP) -c gcc-932)
+ ifeq ($(IS_GCC2),1)
+@@ -98,13 +108,36 @@
+ endif
+ endif
+ 
++# Begin iOS cross-compile configuration.
++# See http://www.cryptopp.com/wiki/iOS_(Command_Line).
++ifeq ($(IS_IOS),1)
++  CXX = clang++
++
++  CXXFLAGS = -DNDEBUG -g -Os -pipe -fPIC -DCRYPTOPP_DISABLE_ASM -arch $(IOS_ARCH)
++  ifeq ($(IOS_ARCH),armv7s)
++    CXXFLAGS += -mios-version-min=6.0
++  endif
++  ifeq ($(IOS_ARCH),armv7)
++    CXXFLAGS += -mios-version-min=6.0
++  endif
++  ifeq ($(IOS_ARCH),arm64)
++    CXXFLAGS += -mios-version-min=7.0
++  endif
++  CXXFLAGS += --sysroot=$(IOS_SYSROOT)
++
++  AR = ar
++  ARFLAGS = crs
++  LDFLAGS += -flat_namespace
++
++endif
++
+ ifeq ($(UNAME),SunOS)
+ LDLIBS += -lnsl -lsocket
+ M32OR64 = -m$(shell isainfo -b)
+ endif
+ 
+ ifneq ($(CLANG_COMPILER),0)
+-CXXFLAGS += -Wno-tautological-compare
++CXXFLAGS += -Wno-tautological-compare -Wno-unused-value
+ endif
+ 
+ ifneq ($(IS_SUN_CC),0)	# override flags for CC Sun C++ compiler
+@@ -140,24 +173,27 @@
+ all: cryptest.exe
+ static: libcryptopp.a
+ dynamic: libcryptopp.so
++dylib: libcryptopp.dylib
+ 
+ test: cryptest.exe
+ 	./cryptest.exe v
+ 
+ clean:
+-	-$(RM) cryptest.exe libcryptopp.a libcryptopp.so $(LIBOBJS) $(TESTOBJS) cryptopp.dll libcryptopp.dll.a libcryptopp.import.a cryptest.import.exe dlltest.exe $(DLLOBJS) $(LIBIMPORTOBJS) $(TESTI MPORTOBJS) $(DLLTESTOBJS)
++	-$(RM) cryptest.exe libcryptopp.a libcryptopp.so libcryptopp.dylib $(LIBOBJS) $(TESTOBJS) cryptopp.dll libcryptopp.dll.a libcryptopp.import.a cryptest.import.exe dlltest.exe $(DLLOBJS) $(LIBIMPORTOBJS) $(TESTI MPORTOBJS) $(DLLTESTOBJS)
+ 
+ install:
+ 	$(MKDIR) -p $(PREFIX)/include/cryptopp $(PREFIX)/lib $(PREFIX)/bin
+ 	-$(CP) *.h $(PREFIX)/include/cryptopp
+ 	-$(CP) *.a $(PREFIX)/lib
+ 	-$(CP) *.so $(PREFIX)/lib
++	-$(CP) *.dylib $(PREFIX)/lib
+ 	-$(CP) *.exe $(PREFIX)/bin
+ 
+ remove:
+ 	-$(RM) -rf $(PREFIX)/include/cryptopp
+ 	-$(RM) $(PREFIX)/lib/libcryptopp.a
+ 	-$(RM) $(PREFIX)/lib/libcryptopp.so
++	-$(RM) $(PREFIX)/lib/libcryptopp.dylib
+ 	-$(RM) $(PREFIX)/bin/cryptest.exe
+ 
+ libcryptopp.a: $(LIBOBJS)
+@@ -165,7 +201,10 @@
+ 	$(RANLIB) $@
+ 
+ libcryptopp.so: $(LIBOBJS)
+-	$(CXX) -shared -o $@ $(LIBOBJS)
++	$(CXX) $(CXXFLAGS) -shared -o $@ $(LIBOBJS)
++
++libcryptopp.dylib: $(LIBOBJS)
++	$(CXX) $(CXXFLAGS) -dynamiclib -o $@ $(LDFLAGS) $(LIBOBJS)
+ 
+ cryptest.exe: libcryptopp.a $(TESTOBJS)
+ 	$(CXX) -o $@ $(CXXFLAGS) $(TESTOBJS) ./libcryptopp.a $(LDFLAGS) $(LDLIBS)

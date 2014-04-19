@@ -1,0 +1,10 @@
+*.xcuserstate
+*.xcscheme
+*.xcbkptlist
+**/xcuserdata/*
+**/build
+**/src
+**/framework
+*.sublime-project
+*.sublime-workspace
+.DS_Store

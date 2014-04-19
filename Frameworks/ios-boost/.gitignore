@@ -1,0 +1,9 @@
+build
+src
+tmp
+prefix
+boost_1_41_0
+boost_1_41_0.tar.bz2
+xcode/Boost.xcodeproj/*.mode1v3
+xcode/Boost.xcodeproj/*.pbxuser
+.DS_Store

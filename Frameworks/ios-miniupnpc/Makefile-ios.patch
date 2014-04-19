@@ -1,0 +1,32 @@
+--- src/miniupnpc-1.9/Makefile	2014-01-31 05:57:23.000000000 -0800
++++ Makefile-ios	2014-04-14 07:43:32.000000000 -0700
+@@ -10,7 +10,9 @@
+ # $ INSTALLPREFIX=/usr/local make install
+ # or
+ # $ make install (default INSTALLPREFIX is /usr)
++ifeq ($(IS_CROSS_COMPILE), 0)
+ OS = $(shell uname -s)
++endif
+ VERSION = $(shell cat VERSION)
+ 
+ ifeq ($(OS), Darwin)
+@@ -54,6 +56,19 @@
+   LDFLAGS=-lsocket -lnsl -lresolv
+ endif
+ 
++ifeq ($(OS), ios)
++	CFLAGS += -arch $(IOS_ARCH) -fPIC -g -Os -pipe  -DMACOSX -D_DARWIN_C_SOURCE --sysroot=$(IOS_SYSROOT)
++	ifeq ($(IOS_ARCH),armv7s)
++    CFLAGS += -mios-version-min=6.0
++  endif
++	ifeq ($(IOS_ARCH),armv7)
++    CFLAGS += -mios-version-min=6.0
++  endif
++  ifeq ($(IOS_ARCH),arm64)
++    CFLAGS += -mios-version-min=7.0
++  endif
++endif
++
+ # APIVERSION is used to build SONAME
+ APIVERSION = 10
+ 
