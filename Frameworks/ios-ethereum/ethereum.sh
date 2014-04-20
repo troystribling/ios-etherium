@@ -16,6 +16,9 @@
 
 source ../../shared.sh
 
+LIBRARY_ROOT=$WORKING_DIR/..
+LIBRARY_DEPENDENCIES="boost cryptopp gmp leveldb miniupnpc"
+
 exportConfig() {
   echo "Export configuration..."
   IOS_ARCH=$1
@@ -24,7 +27,7 @@ exportConfig() {
   else
     IOS_SYSROOT=$XCODE_DEVICE_SDK
   fi
-  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT"
+  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$WORKING_DIR/include -std=c++0x -stdlib=libc++ -Wno-constexpr-not-const"
   if [ "$IOS_ARCH" == "armv7s" ] || [ "$IOS_ARCH" == "armv7" ]; then
     CXXFLAGS="$CXXFLAGS -mios-version-min=6.0"
   else
@@ -48,6 +51,52 @@ exportConfig() {
   echo "IOS_SYSROOT: $IOS_SYSROOT"
   echo "PATH: $PATH"
   doneSection
+}
+
+checkForLibraryDependencies() {
+  echo "Check that library dependencies exist..."
+  for libraryName in $LIBRARY_DEPENDENCIES
+  do
+    echo "Checking for library: $libraryName"
+    local libraryPath=$(getLibraryPath $libraryName)
+    local headerPath=$(getHeadersPath $libraryName)
+    if [ ! -e "$libraryPath" ] && [ ! -e "$libraryName" ]; then
+      ENV_ERROR=1
+      echo "Library path or library header path does not exist"
+      echo "Library path: $libraryPath"
+      echo "Library header path: $headerPath"
+    fi
+  done
+  doneSection
+}
+
+createIncludeDirs() {
+  echo "Create include directories..."
+  mkdir $WORKING_DIR/lib $WORKING_DIR/include
+  for libraryName in $LIBRARY_DEPENDENCIES
+  do
+    local headerPath=$(getHeadersPath $libraryName)
+    ln -s $headerPath $WORKING_DIR/include/$libraryName
+  done
+  doneSection
+}
+
+removeIncludeDir() {
+  echo "Create include directory..."
+  rm -rf $WORKING_DIR/include
+  doneSection
+}
+
+getLibraryPath() {
+  local libraryName=$1
+  local libraryPath=$LIBRARY_ROOT/ios-$libraryName/framework/$libraryName.framework/Versions/A/$libraryName
+  echo $libraryPath
+}
+
+getHeadersPath() {
+  local libraryName=$1
+  local headerPath=$LIBRARY_ROOT/ios-$libraryName/framework/$libraryName.framework/Versions/A/Headers
+  echo $headerPath
 }
 
 applyPatches() {
@@ -79,9 +128,12 @@ echo "Start"
 echo "================================================================="
 showConfig
 developerToolsPresent
+checkForLibraryDependencies
 if [ "$ENV_ERROR" == "0" ]; then
   cleanUp
+  removeIncludeDir
   createDirs
+  createIncludeDirs
   downloadSrc
   unzipBundle
   applyPatches

@@ -4,6 +4,7 @@
 **/xcuserdata/*
 **/build
 **/src
+**/include
 **/framework
 *.sublime-project
 *.sublime-workspace

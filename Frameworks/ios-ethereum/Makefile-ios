@@ -16,7 +16,7 @@ include sources.mk
 CFLAGS += -I. $(OPT)
 CXXFLAGS += -I. $(OPT)
 
-LIBOBJECTS = $(SOURCES:.cc=.o)
+LIBOBJECTS = $(SOURCES:.cpp=.o)
 LIBRARY = libethereum.a
 
 default: all
@@ -24,11 +24,11 @@ default: all
 all: $(LIBRARY)
 
 clean:
-  -rm -f *.o sources.mk
+	-rm -f *.o sources.mk
 
 $(LIBRARY): $(LIBOBJECTS)
-  rm -f $@
-  $(AR) -rs $@ $(LIBOBJECTS)
+	rm -f $@
+	$(AR) -rs $@ $(LIBOBJECTS)
 
-.cc.o:
-  $(CXX) $(CXXFLAGS) -c $< -o $@
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $< -o $@

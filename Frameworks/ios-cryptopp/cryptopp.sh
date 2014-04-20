@@ -6,7 +6,7 @@
 : ${LIBRARY:=libcryptopp.a}
 
 # framework config
-: ${FRAMEWORK_NAME:=cryptop}
+: ${FRAMEWORK_NAME:=cryptopp}
 : ${FRAMEWORK_VERSION:=A}
 : ${FRAMEWORK_CURRENT_VERSION:=562}
 : ${FRAMEWORK_IDENTIFIER:=com.cryptopp}

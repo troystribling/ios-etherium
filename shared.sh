@@ -192,7 +192,8 @@ downloadSrc() {
 }
 
 compileSrcForAllArchs() {
-  buildArchs="i386 armv7s armv7"
+  # buildArchs="i386 armv7s armv7"
+  buildArchs="armv7"
   for buildArch in $buildArchs
   do
     exportConfig $buildArch
