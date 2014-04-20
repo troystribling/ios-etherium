@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Bundle config
-: ${BUNDLE:=level.tar.gz}
-: ${DOWNLOAD_URL:=https://leveldb.googlecode.com/files/leveldb-1.15.0.tar.gz}
-: ${LIBRARY:=libleveldb.a}
+: ${BUNDLE:=cpp-ethereum.zip}
+: ${DOWNLOAD_URL:=https://github.com/ethereum/cpp-ethereum/archive/master.zip}
+: ${LIBRARY:=libethereum.a}
 
 # framework config
-: ${FRAMEWORK_NAME:=leveldb}
+: ${FRAMEWORK_NAME:=cpp-ethereum}
 : ${FRAMEWORK_VERSION:=A}
-: ${FRAMEWORK_CURRENT_VERSION:=1.15.0}
-: ${FRAMEWORK_IDENTIFIER:=com.google.leveldb}
+: ${FRAMEWORK_CURRENT_VERSION:=master}
+: ${FRAMEWORK_IDENTIFIER:=org.ethereum}
 
 # iphone SDK version
 : ${IPHONE_SDKVERSION:=7.1}
@@ -31,10 +31,7 @@ exportConfig() {
     CXXFLAGS="$CXXFLAGS -mios-version-min=7.0"
   fi
   CFLAGS=$CXXFLAGS
-  TARGET_OS=IOS
   export IOS_ARCH
-  export TARGET_OS
-  export CROSS_COMPILE=true
   export CC=clang
   export CXX=clang++
   export CXXFLAGS
@@ -43,8 +40,6 @@ exportConfig() {
   export IOS_SYSROOT
   export PATH="$XCODE_TOOLCHAIN_USR_BIN":"$XCODE_USR_BIN":"$ORIGINAL_PATH"
   echo "IOS_ARC: $IOS_ARCH"
-  echo "TARGET_OS: $TARGET_OS"
-  echo "CROSS_COMPILE: $CROSS_COMPILE"
   echo "CC: $CC"
   echo "CXX: $CXX"
   echo "CXXFLAGS: $CXXFLAGS"
@@ -57,7 +52,8 @@ exportConfig() {
 
 applyPatches() {
   echo "Apply patches..."
-  patch -i $WORKING_DIR/Makefile-ios.patch -d $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION
+  cp $WORKING_DIR/Makefile-ios $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum/Makefile
+  cp $WORKING_DIR/find_sources $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum
   doneSection
 }
 
@@ -70,9 +66,9 @@ moveHeadersToFramework() {
 compileSrcForArch() {
   local buildArch=$1
   echo "Building source for architecture $buildArch..."
-  ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION; \
+  ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum; \
     make clean; \
-    make $LIBRARY; \
+    make; \
     mkdir -p $BUILD_DIR/$buildArch; \
     mv $LIBRARY $BUILD_DIR/$buildArch )
   doneSection
@@ -87,12 +83,12 @@ if [ "$ENV_ERROR" == "0" ]; then
   cleanUp
   createDirs
   downloadSrc
-  untarGzippedBundle
+  unzipBundle
   applyPatches
   compileSrcForAllArchs
-  buildUniversalLib
-  moveHeadersToFramework
-  buildFrameworkPlist
+  # buildUniversalLib
+  # moveHeadersToFramework
+  # buildFrameworkPlist
   echo "Completed successfully.."
 else
   echo "Build failed..."

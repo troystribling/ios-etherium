@@ -1,0 +1,18 @@
+#!/bin/sh
+
+OUTPUT=$1
+PREFIX=$2
+if test -z "$OUTPUT" || test -z "$PREFIX"; then
+  echo "usage: $0 <output-filename> <directory_prefix>" >&2
+  exit 1
+fi
+
+# Delete existing output, if it exists
+rm -f $OUTPUT
+touch $OUTPUT
+
+set -f # temporarily disable globbing so that our patterns aren't expanded
+PORTABLE_FILES=`find . -name '*.cc' -print | sort | sed "s,^$PREFIX/,," | tr "\n" " "`
+set +f # re-enable globbing
+
+echo "SOURCES=$PORTABLE_FILES $PORT_FILE" >> $OUTPUT
