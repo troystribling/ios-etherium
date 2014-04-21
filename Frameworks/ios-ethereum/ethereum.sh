@@ -2,13 +2,13 @@
 
 # Bundle config
 : ${BUNDLE:=cpp-ethereum.zip}
-: ${DOWNLOAD_URL:=https://github.com/ethereum/cpp-ethereum/archive/master.zip}
+: ${DOWNLOAD_URL:=https://github.com/troystribling/cpp-ethereum/archive/develop.zip}
 : ${LIBRARY:=libethereum.a}
 
 # framework config
 : ${FRAMEWORK_NAME:=cpp-ethereum}
 : ${FRAMEWORK_VERSION:=A}
-: ${FRAMEWORK_CURRENT_VERSION:=master}
+: ${FRAMEWORK_CURRENT_VERSION:=develop}
 : ${FRAMEWORK_IDENTIFIER:=org.ethereum}
 
 # iphone SDK version
@@ -18,6 +18,9 @@ source ../../shared.sh
 
 LIBRARY_ROOT=$WORKING_DIR/..
 LIBRARY_DEPENDENCIES="boost cryptopp gmp leveldb miniupnpc"
+INCLUDE_DIR=$WORKING_DIR/include
+CRYPTOPP_INCLUDE_DIR=$WORKING_DIR/include/cryptopp
+SECP256K1_INCLUDE_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1
 
 exportConfig() {
   echo "Export configuration..."
@@ -27,7 +30,7 @@ exportConfig() {
   else
     IOS_SYSROOT=$XCODE_DEVICE_SDK
   fi
-  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$WORKING_DIR/include -std=c++0x -stdlib=libc++ -Wno-constexpr-not-const"
+  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$INCLUDE_DIR -I$CRYPTOPP_INCLUDE_DIR -I$SECP256K1_INCLUDE_DIR -std=c++0x -stdlib=libc++ -Wno-constexpr-not-const"
   if [ "$IOS_ARCH" == "armv7s" ] || [ "$IOS_ARCH" == "armv7" ]; then
     CXXFLAGS="$CXXFLAGS -mios-version-min=6.0"
   else
@@ -58,12 +61,10 @@ checkForLibraryDependencies() {
   for libraryName in $LIBRARY_DEPENDENCIES
   do
     echo "Checking for library: $libraryName"
-    local libraryPath=$(getLibraryPath $libraryName)
     local headerPath=$(getHeadersPath $libraryName)
-    if [ ! -e "$libraryPath" ] && [ ! -e "$libraryName" ]; then
+    if [ ! -e "$headerPath" ]; then
       ENV_ERROR=1
       echo "Library path or library header path does not exist"
-      echo "Library path: $libraryPath"
       echo "Library header path: $headerPath"
     fi
   done
@@ -85,12 +86,6 @@ removeIncludeDir() {
   echo "Create include directory..."
   rm -rf $WORKING_DIR/include
   doneSection
-}
-
-getLibraryPath() {
-  local libraryName=$1
-  local libraryPath=$LIBRARY_ROOT/ios-$libraryName/framework/$libraryName.framework/Versions/A/$libraryName
-  echo $libraryPath
 }
 
 getHeadersPath() {

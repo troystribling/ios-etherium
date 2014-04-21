@@ -9,3 +9,4 @@
 *.sublime-project
 *.sublime-workspace
 .DS_Store
+stino.settings
