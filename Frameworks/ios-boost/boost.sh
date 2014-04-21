@@ -24,7 +24,7 @@
 : ${BOOST_VERSION:=1_53_0}
 : ${BOOST_LIBS:="thread signals filesystem regex program_options system graph date_time"}
 : ${IPHONE_SDKVERSION:=7.1}
-: ${EXTRA_CPPFLAGS:="-DBOOST_AC_USE_PTHREADS -DBOOST_SP_USE_PTHREADS"}
+: ${EXTRA_CPPFLAGS:="-DBOOST_AC_USE_PTHREADS -DBOOST_SP_USE_PTHREADS -std=c++11 -stdlib=libc++ -Wno-unused-const-variable -Wno-deprecated-register"}
 
 # The EXTRA_CPPFLAGS definition works around a thread race issue in
 # shared_ptr. I encountered this historically and have not verified that
