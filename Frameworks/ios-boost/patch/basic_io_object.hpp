@@ -80,12 +80,6 @@ public:
     return service.get_io_service();
   }
 
-  basic_io_object(basic_io_object& other)
-    :service(other.get_service())
-  {
-    service.construct(other.implementation);
-  }
-
 protected:
   /// Construct a basic_io_object.
   /**
