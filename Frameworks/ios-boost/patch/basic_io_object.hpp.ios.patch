@@ -1,0 +1,23 @@
+--- ../src/boost_1_53_0/boost/asio/basic_io_object.hpp	2012-01-15 05:46:25.000000000 -0800
++++ basic_io_object.hpp	2014-04-22 08:12:07.000000000 -0700
+@@ -80,6 +80,12 @@
+     return service.get_io_service();
+   }
+ 
++  basic_io_object(basic_io_object& other)
++    :service(other.get_service())
++  {
++    service.construct(other.implementation);
++  }
++
+ protected:
+   /// Construct a basic_io_object.
+   /**
+@@ -160,7 +166,6 @@
+   implementation_type implementation;
+ 
+ private:
+-  basic_io_object(const basic_io_object&);
+   basic_io_object& operator=(const basic_io_object&);
+ };
+ 
