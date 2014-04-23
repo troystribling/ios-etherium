@@ -14,7 +14,7 @@
 # iphone SDK version
 : ${IPHONE_SDKVERSION:=7.1}
 
-source ../../shared.sh
+source ../shared.sh
 
 LIBRARY_ROOT=$WORKING_DIR/..
 LIBRARY_DEPENDENCIES="boost cryptopp gmp leveldb miniupnpc"
@@ -30,7 +30,7 @@ exportConfig() {
   else
     IOS_SYSROOT=$XCODE_DEVICE_SDK
   fi
-  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$INCLUDE_DIR -I$CRYPTOPP_INCLUDE_DIR -I$SECP256K1_INCLUDE_DIR -std=c++0x -stdlib=libc++ -Wno-constexpr-not-const"
+  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$INCLUDE_DIR -I$CRYPTOPP_INCLUDE_DIR -I$SECP256K1_INCLUDE_DIR -std=c++11 -stdlib=libc++ -Wno-constexpr-not-const"
   if [ "$IOS_ARCH" == "armv7s" ] || [ "$IOS_ARCH" == "armv7" ]; then
     CXXFLAGS="$CXXFLAGS -mios-version-min=6.0"
   else
@@ -111,7 +111,7 @@ compileSrcForArch() {
   local buildArch=$1
   echo "Building source for architecture $buildArch..."
   ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum; \
-    make clean; \
+    # make clean; \
     make; \
     mkdir -p $BUILD_DIR/$buildArch; \
     mv $LIBRARY $BUILD_DIR/$buildArch )
@@ -125,13 +125,13 @@ showConfig
 developerToolsPresent
 checkForLibraryDependencies
 if [ "$ENV_ERROR" == "0" ]; then
-  cleanUp
-  removeIncludeDir
-  createDirs
-  createIncludeDirs
-  downloadSrc
-  unzipBundle
-  applyPatches
+  # cleanUp
+  # removeIncludeDir
+  # createDirs
+  # createIncludeDirs
+  # downloadSrc
+  # unzipBundle
+  # applyPatches
   compileSrcForAllArchs
   # buildUniversalLib
   # moveHeadersToFramework

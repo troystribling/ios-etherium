@@ -14,7 +14,7 @@
 # iphone SDK version
 : ${IPHONE_SDKVERSION:=7.1}
 
-source ../../shared.sh
+source ../shared.sh
 
 exportConfig() {
   echo "Export configuration..."
