@@ -262,10 +262,8 @@ void PeerServer::ensureAccepting()
 					} catch (...){}
 					bi::address remoteAddress = m_socket.remote_endpoint().address();
 					// Port defaults to 0 - we let the hello tell us which port the peer listens to
-					// COMPILE-ERROR
-					// auto p = std::make_shared<PeerSession>(this, std::move(m_socket), m_networkId, remoteAddress);
-					// p->start();
-					// COMPILE-ERROR
+					auto p = std::make_shared<PeerSession>(this, std::move(m_socket), m_networkId, remoteAddress);
+					p->start();
 				}
 				catch (std::exception const& _e)
 				{
@@ -312,11 +310,9 @@ void PeerServer::connect(bi::tcp::endpoint const& _ep)
 		}
 		else
 		{
-			// COMPILE-ERROR
-			// auto p = make_shared<PeerSession>(this, std::move(*s), m_networkId, _ep.address(), _ep.port());
-			// clog(NetNote) << "Connected to " << _ep;
-			// p->start();
-			// COMPILE-ERROR
+			auto p = make_shared<PeerSession>(this, std::move(*s), m_networkId, _ep.address(), _ep.port());
+			clog(NetNote) << "Connected to " << _ep;
+			p->start();
 		}
 		delete s;
 	});
