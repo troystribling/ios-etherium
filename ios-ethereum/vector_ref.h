@@ -4,11 +4,14 @@
 #include <cassert>
 #include <vector>
 #include <string>
+#include <boost/asio/ip/address_v4.hpp>
 
 #pragma warning(push)
 #pragma warning(disable: 4100 4267)
 #include <leveldb/db.h>
 #pragma warning(pop)
+
+namespace bi = boost::asio::ip;
 
 namespace eth
 {
@@ -27,7 +30,7 @@ public:
 	vector_ref(typename std::conditional<std::is_const<_T>::value, std::vector<typename std::remove_const<_T>::type> const*, std::vector<_T>*>::type _data): m_data(_data->data()), m_count(_data->size()) {}
 	vector_ref(typename std::conditional<std::is_const<_T>::value, std::string const&, std::string&>::type _data): m_data((_T*)_data.data()), m_count(_data.size() / sizeof(_T)) {}
 	vector_ref(leveldb::Slice const& _s): m_data(_s.data()), m_count(_s.size() / sizeof(_T)) {}
-	vector_ref(boost::asio::ip::address_v4::bytes_type const& _s): m_data(_s.data()), m_count(_s.size() / sizeof(_T)) {}
+	vector_ref(bi::address_v4::bytes_type const& _s): m_data(_s.data()), m_count(_s.size() / sizeof(_T)) {}
 
 	explicit operator bool() const { return m_data && m_count; }
 
