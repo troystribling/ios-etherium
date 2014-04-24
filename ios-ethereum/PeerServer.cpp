@@ -546,9 +546,7 @@ bytes PeerServer::savePeers() const
 		if (auto p = i.second.lock())
 			if (p->m_socket.is_open() && p->endpoint().port())
 			{
-				// COMPILE-ERROR
-				// ret.appendList(3) << p->endpoint().address().to_v4().to_bytes() << p->endpoint().port() << p->m_id;
-				// COMPILE-ERROR
+				ret.appendList(3) << p->endpoint().address().to_v4().to_bytes() << p->endpoint().port() << p->m_id;
 				n++;
 			}
 	return RLPStream(n).appendRaw(ret.out(), n).out();
