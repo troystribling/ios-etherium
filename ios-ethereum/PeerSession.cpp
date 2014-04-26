@@ -515,75 +515,73 @@ void PeerSession::start()
 void PeerSession::doRead()
 {
 	auto self(shared_from_this());
-// COMPILE-ERROR
-// 	m_socket.async_read_some(boost::asio::buffer(m_data), [this,self](boost::system::error_code ec, std::size_t length)
-// 	{
-// 		if (ec)
-// 		{
-// 			cwarn << "Error reading: " << ec.message();
-// 			dropped();
-// 		}
-// 		else
-// 		{
-// 			try
-// 			{
-// 				m_incoming.resize(m_incoming.size() + length);
-// 				memcpy(m_incoming.data() + m_incoming.size() - length, m_data.data(), length);
-// 				while (m_incoming.size() > 8)
-// 				{
-// 					if (m_incoming[0] != 0x22 || m_incoming[1] != 0x40 || m_incoming[2] != 0x08 || m_incoming[3] != 0x91)
-// 					{
-// 						clogS(NetWarn) << "Out of alignment.";
-// 						disconnect(BadProtocol);
-// 						return;
-// 						clogS(NetNote) << "Skipping: " << hex << showbase << (int)m_incoming[0] << dec;
-// 						memmove(m_incoming.data(), m_incoming.data() + 1, m_incoming.size() - 1);
-// 						m_incoming.resize(m_incoming.size() - 1);
-// 					}
-// 					else
-// 					{
-// 						uint32_t len = fromBigEndian<uint32_t>(bytesConstRef(m_incoming.data() + 4, 4));
-// 						uint32_t tlen = len + 8;
-// 						if (m_incoming.size() < tlen)
-// 							break;
+	m_socket.async_read_some(boost::asio::buffer(m_data.data(), m_data.size()), [this,self](boost::system::error_code ec, std::size_t length)
+	{
+		if (ec)
+		{
+			cwarn << "Error reading: " << ec.message();
+			dropped();
+		}
+		else
+		{
+			try
+			{
+				m_incoming.resize(m_incoming.size() + length);
+				memcpy(m_incoming.data() + m_incoming.size() - length, m_data.data(), length);
+				while (m_incoming.size() > 8)
+				{
+					if (m_incoming[0] != 0x22 || m_incoming[1] != 0x40 || m_incoming[2] != 0x08 || m_incoming[3] != 0x91)
+					{
+						clogS(NetWarn) << "Out of alignment.";
+						disconnect(BadProtocol);
+						return;
+						clogS(NetNote) << "Skipping: " << hex << showbase << (int)m_incoming[0] << dec;
+						memmove(m_incoming.data(), m_incoming.data() + 1, m_incoming.size() - 1);
+						m_incoming.resize(m_incoming.size() - 1);
+					}
+					else
+					{
+						uint32_t len = fromBigEndian<uint32_t>(bytesConstRef(m_incoming.data() + 4, 4));
+						uint32_t tlen = len + 8;
+						if (m_incoming.size() < tlen)
+							break;
 
-// 						// enough has come in.
-// //						cerr << "Received " << len << ": " << toHex(bytesConstRef(m_incoming.data() + 8, len)) << endl;
-// 						auto data = bytesConstRef(m_incoming.data(), tlen);
-// 						if (!checkPacket(data))
-// 						{
-// 							cerr << "Received " << len << ": " << toHex(bytesConstRef(m_incoming.data() + 8, len)) << endl;
-// 							cwarn << "INVALID MESSAGE RECEIVED";
-// 							disconnect(BadProtocol);
-// 							return;
-// 						}
-// 						else
-// 						{
-// 							RLP r(data.cropped(8));
-// 							if (!interpret(r))
-// 							{
-// 								// error
-// 								dropped();
-// 								return;
-// 							}
-// 						}
-// 						memmove(m_incoming.data(), m_incoming.data() + tlen, m_incoming.size() - tlen);
-// 						m_incoming.resize(m_incoming.size() - tlen);
-// 					}
-// 				}
-// 				doRead();
-// 			}
-// 			catch (Exception const& _e)
-// 			{
-// 				clogS(NetWarn) << "ERROR: " << _e.description();
-// 				dropped();
-// 			}
-// 			catch (std::exception const& _e)
-// 			{
-// 				clogS(NetWarn) << "ERROR: " << _e.what();
-// 				dropped();
-// 			}
-// 		}
-// 	});
-// COMPILE-ERROR
+						// enough has come in.
+//						cerr << "Received " << len << ": " << toHex(bytesConstRef(m_incoming.data() + 8, len)) << endl;
+						auto data = bytesConstRef(m_incoming.data(), tlen);
+						if (!checkPacket(data))
+						{
+							cerr << "Received " << len << ": " << toHex(bytesConstRef(m_incoming.data() + 8, len)) << endl;
+							cwarn << "INVALID MESSAGE RECEIVED";
+							disconnect(BadProtocol);
+							return;
+						}
+						else
+						{
+							RLP r(data.cropped(8));
+							if (!interpret(r))
+							{
+								// error
+								dropped();
+								return;
+							}
+						}
+						memmove(m_incoming.data(), m_incoming.data() + tlen, m_incoming.size() - tlen);
+						m_incoming.resize(m_incoming.size() - tlen);
+					}
+				}
+				doRead();
+			}
+			catch (Exception const& _e)
+			{
+				clogS(NetWarn) << "ERROR: " << _e.description();
+				dropped();
+			}
+			catch (std::exception const& _e)
+			{
+				clogS(NetWarn) << "ERROR: " << _e.what();
+				dropped();
+			}
+		}
+	});
 }
