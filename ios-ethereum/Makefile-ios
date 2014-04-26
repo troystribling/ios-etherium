@@ -1,34 +1,24 @@
-# Copyright (c) 2011 The LevelDB Authors. All rights reserved.
-# Use of this source code is governed by a BSD-style license that can be
-# found in the LICENSE file. See the AUTHORS file for names of contributors.
-
-#-----------------------------------------------
-# Uncomment exactly one of the lines labelled (A), (B), and (C) below
-# to switch between compilation modes.
-
-OPT ?= -O2 -DNDEBUG       # (A) Production use (optimized mode)
+OPT ?= -O2 -DNDEBUG
 
 # detect what platform we're building on
 $(shell CC="$(CC)" CXX="$(CXX)" TARGET_OS="$(TARGET_OS)" \
-    ./find_sources sources.mk ./)
+    ./find_sources sources.mk .)
 include sources.mk
 
 CFLAGS += -I. $(OPT)
 CXXFLAGS += -I. $(OPT)
 
-LIBOBJECTS = $(SOURCES:.cpp=.o)
-LIBRARY = libethereum.a
+LIBOBJECTS = $(SOURCES:.cpp=.o) $(SOURCES:.c=.o)
 
 default: all
 
-all: $(LIBRARY)
+all: $(LIBOBJECTS)
 
 clean:
 	-rm -f *.o sources.mk
 
-$(LIBRARY): $(LIBOBJECTS)
-	rm -f $@
-	$(AR) -rs $@ $(LIBOBJECTS)
-
 .cpp.o:
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@

@@ -19,8 +19,10 @@ source ../shared.sh
 LIBRARY_ROOT=$WORKING_DIR/..
 LIBRARY_DEPENDENCIES="boost cryptopp gmp leveldb miniupnpc"
 INCLUDE_DIR=$WORKING_DIR/include
-CRYPTOPP_INCLUDE_DIR=$WORKING_DIR/include/cryptopp
-SECP256K1_INCLUDE_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1
+CRYPTOPP_DIR=$WORKING_DIR/include/cryptopp
+SECP256K1_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1
+LIBETHCORE_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethcore
+LIBETHREUM_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum
 
 exportConfig() {
   echo "Export configuration..."
@@ -30,13 +32,15 @@ exportConfig() {
   else
     IOS_SYSROOT=$XCODE_DEVICE_SDK
   fi
-  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$INCLUDE_DIR -I$CRYPTOPP_INCLUDE_DIR -I$SECP256K1_INCLUDE_DIR -std=c++11 -stdlib=libc++ -Wno-constexpr-not-const"
+  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I.. -I$INCLUDE_DIR -I$CRYPTOPP_DIR -I$SECP256K1_DIR -std=c++11 -stdlib=libc++ -Wno-constexpr-not-const"
+  CFLAGS="-arch $IOS_ARCH -g -Os -pipe --sysroot=$IOS_SYSROOT"
   if [ "$IOS_ARCH" == "armv7s" ] || [ "$IOS_ARCH" == "armv7" ]; then
     CXXFLAGS="$CXXFLAGS -mios-version-min=6.0"
+    CFLAGS="$CFLAGS -mios-version-min=6.0"
   else
     CXXFLAGS="$CXXFLAGS -mios-version-min=7.0"
+    CFLAGS="$CFLAGS -mios-version-min=7.0"
   fi
-  CFLAGS=$CXXFLAGS
   export IOS_ARCH
   export CC=clang
   export CXX=clang++
@@ -96,8 +100,12 @@ getHeadersPath() {
 
 applyPatches() {
   echo "Apply patches..."
-  cp $WORKING_DIR/Makefile-ios $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum/Makefile
-  cp $WORKING_DIR/find_sources $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum
+  cp $WORKING_DIR/Makefile-ios $LIBETHREUM_DIR/Makefile
+  cp $WORKING_DIR/find_sources $LIBETHREUM_DIR
+  cp $WORKING_DIR/Makefile-ios $LIBETHCORE_DIR/Makefile
+  cp $WORKING_DIR/find_sources $LIBETHCORE_DIR
+  cp $WORKING_DIR/Makefile-ios $SECP256K1_DIR/Makefile
+  cp $WORKING_DIR/find_sources $SECP256K1_DIR
   doneSection
 }
 
@@ -109,12 +117,18 @@ moveHeadersToFramework() {
 
 compileSrcForArch() {
   local buildArch=$1
-  echo "Building source for architecture $buildArch..."
+  echo "Building libethcore for architecture $buildArch..."
+  ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethcore; \
+    make clean; \
+    make; )
+  echo "Building secp256k1 for architecture $buildArch..."
+  ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1; \
+    make clean; \
+    make; )
+  echo "Building libethereum for architecture $buildArch..."
   ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum; \
-    # make clean; \
-    make; \
-    mkdir -p $BUILD_DIR/$buildArch; \
-    mv $LIBRARY $BUILD_DIR/$buildArch )
+    make clean; \
+    make; )
   doneSection
 }
 
@@ -125,13 +139,13 @@ showConfig
 developerToolsPresent
 checkForLibraryDependencies
 if [ "$ENV_ERROR" == "0" ]; then
-  # cleanUp
-  # removeIncludeDir
-  # createDirs
-  # createIncludeDirs
-  # downloadSrc
-  # unzipBundle
-  # applyPatches
+  cleanUp
+  removeIncludeDir
+  createDirs
+  createIncludeDirs
+  downloadSrc
+  unzipBundle
+  applyPatches
   compileSrcForAllArchs
   # buildUniversalLib
   # moveHeadersToFramework
