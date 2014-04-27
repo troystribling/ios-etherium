@@ -6,7 +6,7 @@
 : ${LIBRARY:=libethereum.a}
 
 # framework config
-: ${FRAMEWORK_NAME:=cpp-ethereum}
+: ${FRAMEWORK_NAME:=ethereum}
 : ${FRAMEWORK_VERSION:=A}
 : ${FRAMEWORK_CURRENT_VERSION:=develop}
 : ${FRAMEWORK_IDENTIFIER:=org.ethereum}
@@ -20,6 +20,7 @@ LIBRARY_ROOT=$WORKING_DIR/..
 LIBRARY_DEPENDENCIES="boost cryptopp gmp leveldb miniupnpc"
 INCLUDE_DIR=$WORKING_DIR/include
 CRYPTOPP_DIR=$WORKING_DIR/include/cryptopp
+GMP_DIR=$WORKING_DIR/include/gmp
 SECP256K1_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1
 LIBETHCORE_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethcore
 LIBETHREUM_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum
@@ -33,7 +34,7 @@ exportConfig() {
     IOS_SYSROOT=$XCODE_DEVICE_SDK
   fi
   CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I.. -I$INCLUDE_DIR -I$CRYPTOPP_DIR -I$SECP256K1_DIR -std=c++11 -stdlib=libc++ -Wno-constexpr-not-const"
-  CFLAGS="-arch $IOS_ARCH -g -Os -pipe --sysroot=$IOS_SYSROOT"
+  CFLAGS="-arch $IOS_ARCH -g -Os -pipe --sysroot=$IOS_SYSROOT -DUSE_NUM_GMP -DUSE_FIELD_GMP -DUSE_FIELD_INV_NUM -I$GMP_DIR"
   if [ "$IOS_ARCH" == "armv7s" ] || [ "$IOS_ARCH" == "armv7" ]; then
     CXXFLAGS="$CXXFLAGS -mios-version-min=6.0"
     CFLAGS="$CFLAGS -mios-version-min=6.0"
@@ -100,6 +101,7 @@ getHeadersPath() {
 
 applyPatches() {
   echo "Apply patches..."
+  mv $SRC_DIR/cpp-ethereum-$FRAMEWORK_CURRENT_VERSION $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION
   cp $WORKING_DIR/Makefile-ios $LIBETHREUM_DIR/Makefile
   cp $WORKING_DIR/find_sources $LIBETHREUM_DIR
   cp $WORKING_DIR/Makefile-ios $LIBETHCORE_DIR/Makefile
@@ -111,7 +113,7 @@ applyPatches() {
 
 moveHeadersToFramework() {
   echo "Copying includes to $FRAMEWORK_BUNDLE/Headers/..."
-  cp -r $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/include/$FRAMEWORK_NAME/*.h  $FRAMEWORK_BUNDLE/Headers/
+  cp -r $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum/*.h  $FRAMEWORK_BUNDLE/Headers/
   doneSection
 }
 
@@ -120,15 +122,24 @@ compileSrcForArch() {
   echo "Building libethcore for architecture $buildArch..."
   ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethcore; \
     make clean; \
-    make; )
+    make; \
+    mkdir -p $BUILD_DIR/$buildArch; \
+    mv *.o $BUILD_DIR/$buildArch )
   echo "Building secp256k1 for architecture $buildArch..."
   ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1; \
     make clean; \
-    make; )
+    make; \
+    mkdir -p $BUILD_DIR/$buildArch; \
+    mv secp256k1.o $BUILD_DIR/$buildArch )
   echo "Building libethereum for architecture $buildArch..."
   ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum; \
     make clean; \
-    make; )
+    make; \
+    mkdir -p $BUILD_DIR/$buildArch; \
+    mv *.o $BUILD_DIR/$buildArch )
+  echo "Archiving for $buildArch..."
+  ( cd $BUILD_DIR/$buildArch; \
+    $AR -crus $LIBRARY *.o )
   doneSection
 }
 
@@ -147,9 +158,9 @@ if [ "$ENV_ERROR" == "0" ]; then
   unzipBundle
   applyPatches
   compileSrcForAllArchs
-  # buildUniversalLib
-  # moveHeadersToFramework
-  # buildFrameworkPlist
+  buildUniversalLib
+  moveHeadersToFramework
+  buildFrameworkPlist
   echo "Completed successfully.."
 else
   echo "Build failed..."
