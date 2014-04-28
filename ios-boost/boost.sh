@@ -37,6 +37,7 @@
 
 : ${TARBALLDIR:=`pwd`}
 : ${SRCDIR:=`pwd`/src}
+: ${PATCHDIR:=`pwd`/patch}
 : ${BUILDDIR:=`pwd`/build}
 : ${PREFIXDIR:=`pwd`/prefix}
 : ${FRAMEWORKDIR:=`pwd`/framework}
@@ -125,6 +126,7 @@ patchBoost()
         echo "Patching boost to work with Xcode 4.3"
         curl -Ls https://svn.boost.org/trac/boost/raw-attachment/ticket/6686/xcode_43.diff | patch $BOOST_SRC/tools/build/v2/tools/darwin.jam
     fi
+    patch -i $PATCHDIR/basic_io_object.hpp.ios.patch -d $BOOST_SRC/boost/asio
 }
 
 #===============================================================================
