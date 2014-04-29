@@ -1,0 +1,24 @@
+OPT ?= -O2 -DNDEBUG
+
+# detect what platform we're building on
+$(shell CC="$(CC)" CXX="$(CXX)" TARGET_OS="$(TARGET_OS)" \
+    ./find_sources sources.mk .)
+include sources.mk
+
+CFLAGS += -I. $(OPT)
+CXXFLAGS += -I. $(OPT)
+
+LIBOBJECTS = $(SOURCES:.cpp=.o) $(SOURCES:.c=.o)
+
+default: all
+
+all: $(LIBOBJECTS)
+
+clean:
+	-rm -f *.o sources.mk
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@

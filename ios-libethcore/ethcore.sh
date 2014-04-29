@@ -3,10 +3,10 @@
 # Bundle config
 : ${BUNDLE:=cpp-ethereum.zip}
 : ${DOWNLOAD_URL:=https://github.com/troystribling/cpp-ethereum/archive/develop.zip}
-: ${LIBRARY:=libethereum.a}
+: ${LIBRARY:=libethcore.a}
 
 # framework config
-: ${FRAMEWORK_NAME:=ethereum}
+: ${FRAMEWORK_NAME:=libethcore}
 : ${FRAMEWORK_VERSION:=A}
 : ${FRAMEWORK_CURRENT_VERSION:=develop}
 : ${FRAMEWORK_IDENTIFIER:=org.ethereum}
@@ -17,12 +17,11 @@
 source ../shared.sh
 
 LIBRARY_ROOT=$WORKING_DIR/..
-LIBRARY_DEPENDENCIES="boost cryptopp gmp leveldb miniupnpc libethcore"
+LIBRARY_DEPENDENCIES="boost cryptopp gmp leveldb miniupnpc"
 INCLUDE_DIR=$WORKING_DIR/include
 CRYPTOPP_DIR=$WORKING_DIR/include/cryptopp
 GMP_DIR=$WORKING_DIR/include/gmp
-SECP256K1_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1
-LIBETHREUM_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum
+LIBETHCORE_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethcore
 
 exportConfig() {
   echo "Export configuration..."
@@ -32,7 +31,7 @@ exportConfig() {
   else
     IOS_SYSROOT=$XCODE_DEVICE_SDK
   fi
-  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I.. -I$INCLUDE_DIR -I$CRYPTOPP_DIR -I$SECP256K1_DIR -std=gnu++11 -stdlib=libc++ -Wno-constexpr-not-const"
+  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I.. -I$INCLUDE_DIR -I$CRYPTOPP_DIR -std=gnu++11 -stdlib=libc++ -Wno-constexpr-not-const"
   CFLAGS="-arch $IOS_ARCH -g -Os -pipe --sysroot=$IOS_SYSROOT -DUSE_NUM_GMP -DUSE_FIELD_GMP -DUSE_FIELD_INV_NUM -I$GMP_DIR"
   if [ "$IOS_ARCH" == "armv7s" ] || [ "$IOS_ARCH" == "armv7" ]; then
     CXXFLAGS="$CXXFLAGS -mios-version-min=6.0"
@@ -101,10 +100,8 @@ getHeadersPath() {
 applyPatches() {
   echo "Apply patches..."
   mv $SRC_DIR/cpp-ethereum-$FRAMEWORK_CURRENT_VERSION $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION
-  cp $WORKING_DIR/Makefile-ios $LIBETHREUM_DIR/Makefile
-  cp $WORKING_DIR/find_sources $LIBETHREUM_DIR
-  cp $WORKING_DIR/Makefile-ios $SECP256K1_DIR/Makefile
-  cp $WORKING_DIR/find_sources $SECP256K1_DIR
+  cp $WORKING_DIR/Makefile-ios $LIBETHCORE_DIR/Makefile
+  cp $WORKING_DIR/find_sources $LIBETHCORE_DIR
   doneSection
 }
 
@@ -116,14 +113,8 @@ moveHeadersToFramework() {
 
 compileSrcForArch() {
   local buildArch=$1
-  echo "Building secp256k1 for architecture $buildArch..."
-  ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1; \
-    make clean; \
-    make; \
-    mkdir -p $BUILD_DIR/$buildArch; \
-    mv secp256k1.o $BUILD_DIR/$buildArch )
-  echo "Building libethereum for architecture $buildArch..."
-  ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum; \
+  echo "Building libethcore for architecture $buildArch..."
+  ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethcore; \
     make clean; \
     make; \
     mkdir -p $BUILD_DIR/$buildArch; \

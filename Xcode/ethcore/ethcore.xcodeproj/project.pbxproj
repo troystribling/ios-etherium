@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		059F3238190FF572000CDD0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3237190FF572000CDD0C /* Foundation.framework */; };
+		059F3246190FF572000CDD0C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3245190FF572000CDD0C /* XCTest.framework */; };
+		059F3247190FF572000CDD0C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3237190FF572000CDD0C /* Foundation.framework */; };
+		059F3249190FF572000CDD0C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3248190FF572000CDD0C /* UIKit.framework */; };
+		059F324C190FF572000CDD0C /* libethcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3234190FF572000CDD0C /* libethcore.a */; };
+		059F3252190FF572000CDD0C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 059F3250190FF572000CDD0C /* InfoPlist.strings */; };
+		059F3254190FF572000CDD0C /* ethcoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 059F3253190FF572000CDD0C /* ethcoreTests.m */; };
+		059F3274190FF5A9000CDD0C /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F325D190FF5A9000CDD0C /* Common.cpp */; };
+		059F3275190FF5A9000CDD0C /* CommonData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F325F190FF5A9000CDD0C /* CommonData.cpp */; };
+		059F3276190FF5A9000CDD0C /* CommonIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F3261190FF5A9000CDD0C /* CommonIO.cpp */; };
+		059F3277190FF5A9000CDD0C /* FileSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F3265190FF5A9000CDD0C /* FileSystem.cpp */; };
+		059F3278190FF5A9000CDD0C /* FixedHash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F3267190FF5A9000CDD0C /* FixedHash.cpp */; };
+		059F3279190FF5A9000CDD0C /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F3269190FF5A9000CDD0C /* Log.cpp */; };
+		059F327A190FF5A9000CDD0C /* RLP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F326B190FF5A9000CDD0C /* RLP.cpp */; };
+		059F327B190FF5A9000CDD0C /* TrieCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F326D190FF5A9000CDD0C /* TrieCommon.cpp */; };
+		059F327C190FF5A9000CDD0C /* TrieDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F326F190FF5A9000CDD0C /* TrieDB.cpp */; };
+		059F327D190FF5A9000CDD0C /* UPnP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F3271190FF5A9000CDD0C /* UPnP.cpp */; };
+		059F327E190FF5C1000CDD0C /* Common.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F325E190FF5A9000CDD0C /* Common.h */; };
+		059F327F190FF5C1000CDD0C /* CommonData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3260190FF5A9000CDD0C /* CommonData.h */; };
+		059F3280190FF5C1000CDD0C /* CommonIO.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3262190FF5A9000CDD0C /* CommonIO.h */; };
+		059F3281190FF5C1000CDD0C /* Exceptions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3264190FF5A9000CDD0C /* Exceptions.h */; };
+		059F3282190FF5C1000CDD0C /* FileSystem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3266190FF5A9000CDD0C /* FileSystem.h */; };
+		059F3283190FF5C1000CDD0C /* FixedHash.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3268190FF5A9000CDD0C /* FixedHash.h */; };
+		059F3284190FF5C1000CDD0C /* Log.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F326A190FF5A9000CDD0C /* Log.h */; };
+		059F3285190FF5C1000CDD0C /* RLP.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F326C190FF5A9000CDD0C /* RLP.h */; };
+		059F3286190FF5C1000CDD0C /* TrieCommon.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F326E190FF5A9000CDD0C /* TrieCommon.h */; };
+		059F3287190FF5C1000CDD0C /* TrieDB.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3270190FF5A9000CDD0C /* TrieDB.h */; };
+		059F3288190FF5C1000CDD0C /* UPnP.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3272190FF5A9000CDD0C /* UPnP.h */; };
+		059F3289190FF5C1000CDD0C /* vector_ref.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3273190FF5A9000CDD0C /* vector_ref.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		059F324A190FF572000CDD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 059F322C190FF572000CDD0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 059F3233190FF572000CDD0C;
+			remoteInfo = ethcore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		059F3232190FF572000CDD0C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = include/libethcore;
+			dstSubfolderSpec = 16;
+			files = (
+				059F327E190FF5C1000CDD0C /* Common.h in CopyFiles */,
+				059F327F190FF5C1000CDD0C /* CommonData.h in CopyFiles */,
+				059F3280190FF5C1000CDD0C /* CommonIO.h in CopyFiles */,
+				059F3281190FF5C1000CDD0C /* Exceptions.h in CopyFiles */,
+				059F3282190FF5C1000CDD0C /* FileSystem.h in CopyFiles */,
+				059F3283190FF5C1000CDD0C /* FixedHash.h in CopyFiles */,
+				059F3284190FF5C1000CDD0C /* Log.h in CopyFiles */,
+				059F3285190FF5C1000CDD0C /* RLP.h in CopyFiles */,
+				059F3286190FF5C1000CDD0C /* TrieCommon.h in CopyFiles */,
+				059F3287190FF5C1000CDD0C /* TrieDB.h in CopyFiles */,
+				059F3288190FF5C1000CDD0C /* UPnP.h in CopyFiles */,
+				059F3289190FF5C1000CDD0C /* vector_ref.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		059F3234190FF572000CDD0C /* libethcore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libethcore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		059F3237190FF572000CDD0C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		059F323B190FF572000CDD0C /* ethcore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ethcore-Prefix.pch"; sourceTree = "<group>"; };
+		059F3244190FF572000CDD0C /* ethcoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ethcoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		059F3245190FF572000CDD0C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		059F3248190FF572000CDD0C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		059F324F190FF572000CDD0C /* ethcoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ethcoreTests-Info.plist"; sourceTree = "<group>"; };
+		059F3251190FF572000CDD0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		059F3253190FF572000CDD0C /* ethcoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ethcoreTests.m; sourceTree = "<group>"; };
+		059F325D190FF5A9000CDD0C /* Common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Common.cpp; path = "../../cpp-ethereum/libethcore/Common.cpp"; sourceTree = "<group>"; };
+		059F325E190FF5A9000CDD0C /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = "../../cpp-ethereum/libethcore/Common.h"; sourceTree = "<group>"; };
+		059F325F190FF5A9000CDD0C /* CommonData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommonData.cpp; path = "../../cpp-ethereum/libethcore/CommonData.cpp"; sourceTree = "<group>"; };
+		059F3260190FF5A9000CDD0C /* CommonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonData.h; path = "../../cpp-ethereum/libethcore/CommonData.h"; sourceTree = "<group>"; };
+		059F3261190FF5A9000CDD0C /* CommonIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommonIO.cpp; path = "../../cpp-ethereum/libethcore/CommonIO.cpp"; sourceTree = "<group>"; };
+		059F3262190FF5A9000CDD0C /* CommonIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonIO.h; path = "../../cpp-ethereum/libethcore/CommonIO.h"; sourceTree = "<group>"; };
+		059F3263190FF5A9000CDD0C /* CryptoHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CryptoHeaders.h; path = "../../cpp-ethereum/libethcore/CryptoHeaders.h"; sourceTree = "<group>"; };
+		059F3264190FF5A9000CDD0C /* Exceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exceptions.h; path = "../../cpp-ethereum/libethcore/Exceptions.h"; sourceTree = "<group>"; };
+		059F3265190FF5A9000CDD0C /* FileSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FileSystem.cpp; path = "../../cpp-ethereum/libethcore/FileSystem.cpp"; sourceTree = "<group>"; };
+		059F3266190FF5A9000CDD0C /* FileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileSystem.h; path = "../../cpp-ethereum/libethcore/FileSystem.h"; sourceTree = "<group>"; };
+		059F3267190FF5A9000CDD0C /* FixedHash.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FixedHash.cpp; path = "../../cpp-ethereum/libethcore/FixedHash.cpp"; sourceTree = "<group>"; };
+		059F3268190FF5A9000CDD0C /* FixedHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FixedHash.h; path = "../../cpp-ethereum/libethcore/FixedHash.h"; sourceTree = "<group>"; };
+		059F3269190FF5A9000CDD0C /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = "../../cpp-ethereum/libethcore/Log.cpp"; sourceTree = "<group>"; };
+		059F326A190FF5A9000CDD0C /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Log.h; path = "../../cpp-ethereum/libethcore/Log.h"; sourceTree = "<group>"; };
+		059F326B190FF5A9000CDD0C /* RLP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RLP.cpp; path = "../../cpp-ethereum/libethcore/RLP.cpp"; sourceTree = "<group>"; };
+		059F326C190FF5A9000CDD0C /* RLP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RLP.h; path = "../../cpp-ethereum/libethcore/RLP.h"; sourceTree = "<group>"; };
+		059F326D190FF5A9000CDD0C /* TrieCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrieCommon.cpp; path = "../../cpp-ethereum/libethcore/TrieCommon.cpp"; sourceTree = "<group>"; };
+		059F326E190FF5A9000CDD0C /* TrieCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrieCommon.h; path = "../../cpp-ethereum/libethcore/TrieCommon.h"; sourceTree = "<group>"; };
+		059F326F190FF5A9000CDD0C /* TrieDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrieDB.cpp; path = "../../cpp-ethereum/libethcore/TrieDB.cpp"; sourceTree = "<group>"; };
+		059F3270190FF5A9000CDD0C /* TrieDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrieDB.h; path = "../../cpp-ethereum/libethcore/TrieDB.h"; sourceTree = "<group>"; };
+		059F3271190FF5A9000CDD0C /* UPnP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UPnP.cpp; path = "../../cpp-ethereum/libethcore/UPnP.cpp"; sourceTree = "<group>"; };
+		059F3272190FF5A9000CDD0C /* UPnP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPnP.h; path = "../../cpp-ethereum/libethcore/UPnP.h"; sourceTree = "<group>"; };
+		059F3273190FF5A9000CDD0C /* vector_ref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vector_ref.h; path = "../../cpp-ethereum/libethcore/vector_ref.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		059F3231190FF572000CDD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059F3238190FF572000CDD0C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		059F3241190FF572000CDD0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059F324C190FF572000CDD0C /* libethcore.a in Frameworks */,
+				059F3246190FF572000CDD0C /* XCTest.framework in Frameworks */,
+				059F3249190FF572000CDD0C /* UIKit.framework in Frameworks */,
+				059F3247190FF572000CDD0C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		059F322B190FF572000CDD0C = {
+			isa = PBXGroup;
+			children = (
+				059F3239190FF572000CDD0C /* ethcore */,
+				059F324D190FF572000CDD0C /* ethcoreTests */,
+				059F3236190FF572000CDD0C /* Frameworks */,
+				059F3235190FF572000CDD0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		059F3235190FF572000CDD0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				059F3234190FF572000CDD0C /* libethcore.a */,
+				059F3244190FF572000CDD0C /* ethcoreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		059F3236190FF572000CDD0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				059F3237190FF572000CDD0C /* Foundation.framework */,
+				059F3245190FF572000CDD0C /* XCTest.framework */,
+				059F3248190FF572000CDD0C /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		059F3239190FF572000CDD0C /* ethcore */ = {
+			isa = PBXGroup;
+			children = (
+				059F325D190FF5A9000CDD0C /* Common.cpp */,
+				059F325E190FF5A9000CDD0C /* Common.h */,
+				059F325F190FF5A9000CDD0C /* CommonData.cpp */,
+				059F3260190FF5A9000CDD0C /* CommonData.h */,
+				059F3261190FF5A9000CDD0C /* CommonIO.cpp */,
+				059F3262190FF5A9000CDD0C /* CommonIO.h */,
+				059F3263190FF5A9000CDD0C /* CryptoHeaders.h */,
+				059F3264190FF5A9000CDD0C /* Exceptions.h */,
+				059F3265190FF5A9000CDD0C /* FileSystem.cpp */,
+				059F3266190FF5A9000CDD0C /* FileSystem.h */,
+				059F3267190FF5A9000CDD0C /* FixedHash.cpp */,
+				059F3268190FF5A9000CDD0C /* FixedHash.h */,
+				059F3269190FF5A9000CDD0C /* Log.cpp */,
+				059F326A190FF5A9000CDD0C /* Log.h */,
+				059F326B190FF5A9000CDD0C /* RLP.cpp */,
+				059F326C190FF5A9000CDD0C /* RLP.h */,
+				059F326D190FF5A9000CDD0C /* TrieCommon.cpp */,
+				059F326E190FF5A9000CDD0C /* TrieCommon.h */,
+				059F326F190FF5A9000CDD0C /* TrieDB.cpp */,
+				059F3270190FF5A9000CDD0C /* TrieDB.h */,
+				059F3271190FF5A9000CDD0C /* UPnP.cpp */,
+				059F3272190FF5A9000CDD0C /* UPnP.h */,
+				059F3273190FF5A9000CDD0C /* vector_ref.h */,
+				059F323A190FF572000CDD0C /* Supporting Files */,
+			);
+			path = ethcore;
+			sourceTree = "<group>";
+		};
+		059F323A190FF572000CDD0C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				059F323B190FF572000CDD0C /* ethcore-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		059F324D190FF572000CDD0C /* ethcoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				059F3253190FF572000CDD0C /* ethcoreTests.m */,
+				059F324E190FF572000CDD0C /* Supporting Files */,
+			);
+			path = ethcoreTests;
+			sourceTree = "<group>";
+		};
+		059F324E190FF572000CDD0C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				059F324F190FF572000CDD0C /* ethcoreTests-Info.plist */,
+				059F3250190FF572000CDD0C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		059F3233190FF572000CDD0C /* ethcore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 059F3257190FF572000CDD0C /* Build configuration list for PBXNativeTarget "ethcore" */;
+			buildPhases = (
+				059F3230190FF572000CDD0C /* Sources */,
+				059F3231190FF572000CDD0C /* Frameworks */,
+				059F3232190FF572000CDD0C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ethcore;
+			productName = ethcore;
+			productReference = 059F3234190FF572000CDD0C /* libethcore.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		059F3243190FF572000CDD0C /* ethcoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 059F325A190FF572000CDD0C /* Build configuration list for PBXNativeTarget "ethcoreTests" */;
+			buildPhases = (
+				059F3240190FF572000CDD0C /* Sources */,
+				059F3241190FF572000CDD0C /* Frameworks */,
+				059F3242190FF572000CDD0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				059F324B190FF572000CDD0C /* PBXTargetDependency */,
+			);
+			name = ethcoreTests;
+			productName = ethcoreTests;
+			productReference = 059F3244190FF572000CDD0C /* ethcoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		059F322C190FF572000CDD0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = gnos.us;
+			};
+			buildConfigurationList = 059F322F190FF572000CDD0C /* Build configuration list for PBXProject "ethcore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 059F322B190FF572000CDD0C;
+			productRefGroup = 059F3235190FF572000CDD0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				059F3233190FF572000CDD0C /* ethcore */,
+				059F3243190FF572000CDD0C /* ethcoreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		059F3242190FF572000CDD0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059F3252190FF572000CDD0C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		059F3230190FF572000CDD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059F3279190FF5A9000CDD0C /* Log.cpp in Sources */,
+				059F3277190FF5A9000CDD0C /* FileSystem.cpp in Sources */,
+				059F3275190FF5A9000CDD0C /* CommonData.cpp in Sources */,
+				059F327A190FF5A9000CDD0C /* RLP.cpp in Sources */,
+				059F327D190FF5A9000CDD0C /* UPnP.cpp in Sources */,
+				059F327B190FF5A9000CDD0C /* TrieCommon.cpp in Sources */,
+				059F3274190FF5A9000CDD0C /* Common.cpp in Sources */,
+				059F327C190FF5A9000CDD0C /* TrieDB.cpp in Sources */,
+				059F3276190FF5A9000CDD0C /* CommonIO.cpp in Sources */,
+				059F3278190FF5A9000CDD0C /* FixedHash.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		059F3240190FF572000CDD0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				059F3254190FF572000CDD0C /* ethcoreTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		059F324B190FF572000CDD0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 059F3233190FF572000CDD0C /* ethcore */;
+			targetProxy = 059F324A190FF572000CDD0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		059F3250190FF572000CDD0C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				059F3251190FF572000CDD0C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		059F3255190FF572000CDD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		059F3256190FF572000CDD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		059F3258190FF572000CDD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ethcore.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ethcore/ethcore-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		059F3259190FF572000CDD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/ethcore.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ethcore/ethcore-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		059F325B190FF572000CDD0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ethcore/ethcore-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ethcoreTests/ethcoreTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		059F325C190FF572000CDD0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ethcore/ethcore-Prefix.pch";
+				INFOPLIST_FILE = "ethcoreTests/ethcoreTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		059F322F190FF572000CDD0C /* Build configuration list for PBXProject "ethcore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				059F3255190FF572000CDD0C /* Debug */,
+				059F3256190FF572000CDD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		059F3257190FF572000CDD0C /* Build configuration list for PBXNativeTarget "ethcore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				059F3258190FF572000CDD0C /* Debug */,
+				059F3259190FF572000CDD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		059F325A190FF572000CDD0C /* Build configuration list for PBXNativeTarget "ethcoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				059F325B190FF572000CDD0C /* Debug */,
+				059F325C190FF572000CDD0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 059F322C190FF572000CDD0C /* Project object */;
+}

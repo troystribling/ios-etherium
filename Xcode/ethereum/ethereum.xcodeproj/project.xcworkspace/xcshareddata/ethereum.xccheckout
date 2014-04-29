@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A6D6BF57-7CB2-4305-A781-0A2E190CDED0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ethereum</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2E54D2F7-1507-44B8-B7A2-B70E65816FFC</key>
+		<string>ssh://github.com/troystribling/ios-etherium.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Xcode/ethereum/ethereum.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2E54D2F7-1507-44B8-B7A2-B70E65816FFC</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/troystribling/ios-etherium.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2E54D2F7-1507-44B8-B7A2-B70E65816FFC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2E54D2F7-1507-44B8-B7A2-B70E65816FFC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ethereum</string>
+		</dict>
+	</array>
+</dict>
+</plist>
