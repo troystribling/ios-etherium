@@ -36,6 +36,11 @@
 		059F3287190FF5C1000CDD0C /* TrieDB.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3270190FF5A9000CDD0C /* TrieDB.h */; };
 		059F3288190FF5C1000CDD0C /* UPnP.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3272190FF5A9000CDD0C /* UPnP.h */; };
 		059F3289190FF5C1000CDD0C /* vector_ref.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F3273190FF5A9000CDD0C /* vector_ref.h */; };
+		059F330D19113CCF000CDD0C /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F330C19113CCF000CDD0C /* boost.framework */; };
+		059F330F19113CE0000CDD0C /* cryptopp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F330E19113CE0000CDD0C /* cryptopp.framework */; };
+		059F331319113CFA000CDD0C /* gmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F331219113CFA000CDD0C /* gmp.framework */; };
+		059F331519113D14000CDD0C /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F331419113D14000CDD0C /* leveldb.framework */; };
+		059F331719113D2B000CDD0C /* miniupnpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F331619113D2A000CDD0C /* miniupnpc.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +110,12 @@
 		059F3271190FF5A9000CDD0C /* UPnP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UPnP.cpp; path = "../../cpp-ethereum/libethcore/UPnP.cpp"; sourceTree = "<group>"; };
 		059F3272190FF5A9000CDD0C /* UPnP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UPnP.h; path = "../../cpp-ethereum/libethcore/UPnP.h"; sourceTree = "<group>"; };
 		059F3273190FF5A9000CDD0C /* vector_ref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = vector_ref.h; path = "../../cpp-ethereum/libethcore/vector_ref.h"; sourceTree = "<group>"; };
+		059F330C19113CCF000CDD0C /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = "../../ios-boost/framework/boost.framework"; sourceTree = "<group>"; };
+		059F330E19113CE0000CDD0C /* cryptopp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = cryptopp.framework; path = "../../ios-cryptopp/framework/cryptopp.framework"; sourceTree = "<group>"; };
+		059F331019113CED000CDD0C /* ethereum.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ethereum.framework; path = "../../ios-ethereum/framework/ethereum.framework"; sourceTree = "<group>"; };
+		059F331219113CFA000CDD0C /* gmp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gmp.framework; path = "../../ios-gmp/framework/gmp.framework"; sourceTree = "<group>"; };
+		059F331419113D14000CDD0C /* leveldb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = leveldb.framework; path = "../../ios-leveldb/framework/leveldb.framework"; sourceTree = "<group>"; };
+		059F331619113D2A000CDD0C /* miniupnpc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = miniupnpc.framework; path = "../../ios-miniupnpc/framework/miniupnpc.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +123,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059F331719113D2B000CDD0C /* miniupnpc.framework in Frameworks */,
+				059F331519113D14000CDD0C /* leveldb.framework in Frameworks */,
+				059F331319113CFA000CDD0C /* gmp.framework in Frameworks */,
+				059F330F19113CE0000CDD0C /* cryptopp.framework in Frameworks */,
+				059F330D19113CCF000CDD0C /* boost.framework in Frameworks */,
 				059F3238190FF572000CDD0C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +168,12 @@
 		059F3236190FF572000CDD0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				059F331619113D2A000CDD0C /* miniupnpc.framework */,
+				059F331419113D14000CDD0C /* leveldb.framework */,
+				059F331219113CFA000CDD0C /* gmp.framework */,
+				059F331019113CED000CDD0C /* ethereum.framework */,
+				059F330E19113CE0000CDD0C /* cryptopp.framework */,
+				059F330C19113CCF000CDD0C /* boost.framework */,
 				059F3237190FF572000CDD0C /* Foundation.framework */,
 				059F3245190FF572000CDD0C /* XCTest.framework */,
 				059F3248190FF572000CDD0C /* UIKit.framework */,
@@ -412,11 +434,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/ethcore.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"../../ios-boost/framework",
+					"../../ios-cryptopp/framework",
+					"../../ios-gmp/framework",
+					"../../ios-leveldb/framework",
+					"../../ios-miniupnpc/framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ethcore/ethcore-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../ios-cryptopp/framework/cryptopp.framework/Headers",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -424,11 +460,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/ethcore.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"../../ios-boost/framework",
+					"../../ios-cryptopp/framework",
+					"../../ios-gmp/framework",
+					"../../ios-leveldb/framework",
+					"../../ios-miniupnpc/framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ethcore/ethcore-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../ios-cryptopp/framework/cryptopp.framework/Headers",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

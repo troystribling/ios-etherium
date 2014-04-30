@@ -12,7 +12,11 @@ LIBOBJECTS = $(SOURCES:.cpp=.o) $(SOURCES:.c=.o)
 
 default: all
 
-all: $(LIBOBJECTS)
+all: $(LIBRARY)
+
+$(LIBRARY): $(LIBOBJECTS)
+  rm -f $@
+  $(AR) -crus $@ $(LIBOBJECTS)
 
 clean:
 	-rm -f *.o sources.mk
