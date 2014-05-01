@@ -8,7 +8,7 @@ include sources.mk
 CFLAGS += -I. $(OPT)
 CXXFLAGS += -I. $(OPT)
 
-LIBOBJECTS = $(SOURCES:.c=.o)
+LIBOBJECTS = $(CPPSOURCES:.cpp=.o) $(CSOURCES:.c=.o)
 
 default: all
 

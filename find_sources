@@ -12,7 +12,8 @@ rm -f $OUTPUT
 touch $OUTPUT
 
 set -f # temporarily disable globbing so that our patterns aren't expanded
-PORTABLE_FILES=`find $PREFIX -regex '.*[cpp|c]$' -print | sort | sed "s,^$PREFIX/,," | tr "\n" " "`
+CPPPORTABLE_FILES=`find $PREFIX -regex '.*\.cpp$' -print | sort | sed "s,^$PREFIX/,," | tr "\n" " "`
+CPORTABLE_FILES=`find $PREFIX -regex '.*\.c$' -print | sort | sed "s,^$PREFIX/,," | tr "\n" " "`
 set +f # re-enable globbing
 
-echo "SOURCES=$PORTABLE_FILES" >> $OUTPUT
+echo "CPPSOURCES=$CPPPORTABLE_FILES\nCSOURCES=$CPORTABLE_FILES" >> $OUTPUT

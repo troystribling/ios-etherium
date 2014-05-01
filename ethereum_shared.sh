@@ -1,5 +1,10 @@
 #!/bin/bash
 
+LIBRARY_ROOT=$WORKING_DIR/..
+INCLUDE_DIR=$WORKING_DIR/include
+CRYPTOPP_DIR=$WORKING_DIR/include/cryptopp
+GMP_DIR=$WORKING_DIR/include/gmp
+
 exportConfig() {
   echo "Export configuration..."
   IOS_ARCH=$1
@@ -8,7 +13,7 @@ exportConfig() {
   else
     IOS_SYSROOT=$XCODE_DEVICE_SDK
   fi
-  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$INCLUDE_DIR -std=gnu++11 -stdlib=libc++ -Wno-constexpr-not-const"
+  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$CRYPTOPP_DIR -I$INCLUDE_DIR -std=gnu++11 -stdlib=libc++ -Wno-constexpr-not-const"
   CFLAGS="-arch $IOS_ARCH -g -Os -pipe --sysroot=$IOS_SYSROOT -DUSE_NUM_GMP -DUSE_FIELD_GMP -DUSE_FIELD_INV_NUM -I$GMP_DIR"
   if [ "$IOS_ARCH" == "armv7s" ] || [ "$IOS_ARCH" == "armv7" ]; then
     CXXFLAGS="$CXXFLAGS -mios-version-min=6.0"
@@ -63,3 +68,17 @@ createIncludeDirs() {
   done
   doneSection
 }
+
+removeIncludeDir() {
+  echo "Create include directory..."
+  rm -rf $WORKING_DIR/include
+  doneSection
+}
+
+getHeadersPath() {
+  local libraryName=$1
+  local headerPath=$LIBRARY_ROOT/ios-$libraryName/framework/$libraryName.framework/Versions/A/Headers
+  echo $headerPath
+}
+
+
