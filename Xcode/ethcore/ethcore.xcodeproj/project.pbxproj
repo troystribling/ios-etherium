@@ -41,6 +41,7 @@
 		059F331319113CFA000CDD0C /* gmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F331219113CFA000CDD0C /* gmp.framework */; };
 		059F331519113D14000CDD0C /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F331419113D14000CDD0C /* leveldb.framework */; };
 		059F331719113D2B000CDD0C /* miniupnpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F331619113D2A000CDD0C /* miniupnpc.framework */; };
+		059F33191911EF6C000CDD0C /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F33181911EF6C000CDD0C /* secp256k1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		059F331219113CFA000CDD0C /* gmp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gmp.framework; path = "../../ios-gmp/framework/gmp.framework"; sourceTree = "<group>"; };
 		059F331419113D14000CDD0C /* leveldb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = leveldb.framework; path = "../../ios-leveldb/framework/leveldb.framework"; sourceTree = "<group>"; };
 		059F331619113D2A000CDD0C /* miniupnpc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = miniupnpc.framework; path = "../../ios-miniupnpc/framework/miniupnpc.framework"; sourceTree = "<group>"; };
+		059F33181911EF6C000CDD0C /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = "../../ios-secp256k1/framework/secp256k1.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059F33191911EF6C000CDD0C /* secp256k1.framework in Frameworks */,
 				059F331719113D2B000CDD0C /* miniupnpc.framework in Frameworks */,
 				059F331519113D14000CDD0C /* leveldb.framework in Frameworks */,
 				059F331319113CFA000CDD0C /* gmp.framework in Frameworks */,
@@ -168,6 +171,7 @@
 		059F3236190FF572000CDD0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				059F33181911EF6C000CDD0C /* secp256k1.framework */,
 				059F331619113D2A000CDD0C /* miniupnpc.framework */,
 				059F331419113D14000CDD0C /* leveldb.framework */,
 				059F331219113CFA000CDD0C /* gmp.framework */,
@@ -441,6 +445,7 @@
 					"../../ios-gmp/framework",
 					"../../ios-leveldb/framework",
 					"../../ios-miniupnpc/framework",
+					"/Users/troy/Develop/iPhone/ethereum/ios-secp256k1/framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ethcore/ethcore-Prefix.pch";
@@ -448,6 +453,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"../../ios-cryptopp/framework/cryptopp.framework/Headers",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wno-constexpr-not-const",
+					"-Wno-conversion",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -467,6 +477,7 @@
 					"../../ios-gmp/framework",
 					"../../ios-leveldb/framework",
 					"../../ios-miniupnpc/framework",
+					"/Users/troy/Develop/iPhone/ethereum/ios-secp256k1/framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ethcore/ethcore-Prefix.pch";
@@ -474,6 +485,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"../../ios-cryptopp/framework/cryptopp.framework/Headers",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wno-constexpr-not-const",
+					"-Wno-conversion",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

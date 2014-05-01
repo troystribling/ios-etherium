@@ -14,23 +14,46 @@
 		059F32AB190FF67D000CDD0C /* libethereum.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3293190FF67D000CDD0C /* libethereum.a */; };
 		059F32B1190FF67D000CDD0C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 059F32AF190FF67D000CDD0C /* InfoPlist.strings */; };
 		059F32B3190FF67D000CDD0C /* ethereumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 059F32B2190FF67D000CDD0C /* ethereumTests.m */; };
-		059F32E0190FF76A000CDD0C /* AddressState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32BE190FF76A000CDD0C /* AddressState.cpp */; };
-		059F32E1190FF76A000CDD0C /* BlockChain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32C0190FF76A000CDD0C /* BlockChain.cpp */; };
-		059F32E2190FF76A000CDD0C /* BlockInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32C2190FF76A000CDD0C /* BlockInfo.cpp */; };
-		059F32E3190FF76A000CDD0C /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32C4190FF76A000CDD0C /* Client.cpp */; };
-		059F32E4190FF76A000CDD0C /* CommonEth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32C6190FF76A000CDD0C /* CommonEth.cpp */; };
-		059F32E5190FF76A000CDD0C /* Dagger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32C8190FF76A000CDD0C /* Dagger.cpp */; };
-		059F32E6190FF76A000CDD0C /* Defaults.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32CA190FF76A000CDD0C /* Defaults.cpp */; };
-		059F32E7190FF76A000CDD0C /* FeeStructure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32CE190FF76A000CDD0C /* FeeStructure.cpp */; };
-		059F32E8190FF76A000CDD0C /* Instruction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32D0190FF76A000CDD0C /* Instruction.cpp */; };
-		059F32E9190FF76A000CDD0C /* PeerNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32D2190FF76A000CDD0C /* PeerNetwork.cpp */; };
-		059F32EA190FF76A000CDD0C /* PeerServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32D4190FF76A000CDD0C /* PeerServer.cpp */; };
-		059F32EB190FF76A000CDD0C /* PeerSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32D6190FF76A000CDD0C /* PeerSession.cpp */; };
-		059F32EC190FF76A000CDD0C /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32D8190FF76A000CDD0C /* State.cpp */; };
-		059F32ED190FF76A000CDD0C /* Transaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32DA190FF76A000CDD0C /* Transaction.cpp */; };
-		059F32EE190FF76A000CDD0C /* TransactionQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32DC190FF76A000CDD0C /* TransactionQueue.cpp */; };
-		059F32EF190FF76A000CDD0C /* VM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F32DE190FF76A000CDD0C /* VM.cpp */; };
-		059F32FC190FF798000CDD0C /* secp256k1.c in Sources */ = {isa = PBXBuildFile; fileRef = 059F32F9190FF798000CDD0C /* secp256k1.c */; };
+		059F333C19120427000CDD0C /* AddressState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F331A19120427000CDD0C /* AddressState.cpp */; };
+		059F333D19120427000CDD0C /* BlockChain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F331C19120427000CDD0C /* BlockChain.cpp */; };
+		059F333E19120427000CDD0C /* BlockInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F331E19120427000CDD0C /* BlockInfo.cpp */; };
+		059F333F19120427000CDD0C /* Client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F332019120427000CDD0C /* Client.cpp */; };
+		059F334019120427000CDD0C /* CommonEth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F332219120427000CDD0C /* CommonEth.cpp */; };
+		059F334119120427000CDD0C /* Dagger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F332419120427000CDD0C /* Dagger.cpp */; };
+		059F334219120427000CDD0C /* Defaults.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F332619120427000CDD0C /* Defaults.cpp */; };
+		059F334319120427000CDD0C /* FeeStructure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F332A19120427000CDD0C /* FeeStructure.cpp */; };
+		059F334419120427000CDD0C /* Instruction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F332C19120427000CDD0C /* Instruction.cpp */; };
+		059F334519120427000CDD0C /* PeerNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F332E19120427000CDD0C /* PeerNetwork.cpp */; };
+		059F334619120427000CDD0C /* PeerServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F333019120427000CDD0C /* PeerServer.cpp */; };
+		059F334719120427000CDD0C /* PeerSession.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F333219120427000CDD0C /* PeerSession.cpp */; };
+		059F334819120427000CDD0C /* State.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F333419120427000CDD0C /* State.cpp */; };
+		059F334919120427000CDD0C /* Transaction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F333619120427000CDD0C /* Transaction.cpp */; };
+		059F334A19120427000CDD0C /* TransactionQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F333819120427000CDD0C /* TransactionQueue.cpp */; };
+		059F334B19120427000CDD0C /* VM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 059F333A19120427000CDD0C /* VM.cpp */; };
+		059F334C19120545000CDD0C /* AddressState.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F331B19120427000CDD0C /* AddressState.h */; };
+		059F334D19120545000CDD0C /* BlockChain.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F331D19120427000CDD0C /* BlockChain.h */; };
+		059F334E19120545000CDD0C /* BlockInfo.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F331F19120427000CDD0C /* BlockInfo.h */; };
+		059F334F19120545000CDD0C /* Client.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F332119120427000CDD0C /* Client.h */; };
+		059F335019120545000CDD0C /* CommonEth.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F332319120427000CDD0C /* CommonEth.h */; };
+		059F335119120545000CDD0C /* Dagger.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F332519120427000CDD0C /* Dagger.h */; };
+		059F335219120545000CDD0C /* Defaults.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F332719120427000CDD0C /* Defaults.h */; };
+		059F335319120545000CDD0C /* ExtVMFace.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F332919120427000CDD0C /* ExtVMFace.h */; };
+		059F335419120545000CDD0C /* FeeStructure.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F332B19120427000CDD0C /* FeeStructure.h */; };
+		059F335519120545000CDD0C /* Instruction.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F332D19120427000CDD0C /* Instruction.h */; };
+		059F335619120545000CDD0C /* PeerNetwork.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F332F19120427000CDD0C /* PeerNetwork.h */; };
+		059F335719120545000CDD0C /* PeerServer.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F333119120427000CDD0C /* PeerServer.h */; };
+		059F335819120545000CDD0C /* PeerSession.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F333319120427000CDD0C /* PeerSession.h */; };
+		059F335919120545000CDD0C /* State.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F333519120427000CDD0C /* State.h */; };
+		059F335A19120545000CDD0C /* Transaction.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F333719120427000CDD0C /* Transaction.h */; };
+		059F335B19120545000CDD0C /* TransactionQueue.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F333919120427000CDD0C /* TransactionQueue.h */; };
+		059F335C19120545000CDD0C /* VM.h in Resources */ = {isa = PBXBuildFile; fileRef = 059F333B19120427000CDD0C /* VM.h */; };
+		059F335E191205DB000CDD0C /* boost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F335D191205DB000CDD0C /* boost.framework */; };
+		059F3360191205EC000CDD0C /* cryptopp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F335F191205EC000CDD0C /* cryptopp.framework */; };
+		059F336219120607000CDD0C /* gmp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F336119120607000CDD0C /* gmp.framework */; };
+		059F336419120632000CDD0C /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F336319120632000CDD0C /* leveldb.framework */; };
+		059F3368191206AE000CDD0C /* miniupnpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3367191206AD000CDD0C /* miniupnpc.framework */; };
+		059F336A191206BC000CDD0C /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3369191206BC000CDD0C /* secp256k1.framework */; };
+		059F338719120BFD000CDD0C /* libethcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F338419120BE8000CDD0C /* libethcore.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +63,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 059F3292190FF67D000CDD0C;
 			remoteInfo = ethereum;
+		};
+		059F338319120BE8000CDD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 059F337E19120BE7000CDD0C /* ethcore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 059F3234190FF572000CDD0C;
+			remoteInfo = ethcore;
+		};
+		059F338519120BE8000CDD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 059F337E19120BE7000CDD0C /* ethcore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 059F3244190FF572000CDD0C;
+			remoteInfo = ethcoreTests;
+		};
+		059F338B19128C4E000CDD0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 059F337E19120BE7000CDD0C /* ethcore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 059F3233190FF572000CDD0C;
+			remoteInfo = ethcore;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -65,66 +109,48 @@
 		059F32AE190FF67D000CDD0C /* ethereumTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ethereumTests-Info.plist"; sourceTree = "<group>"; };
 		059F32B0190FF67D000CDD0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		059F32B2190FF67D000CDD0C /* ethereumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ethereumTests.m; sourceTree = "<group>"; };
-		059F32BE190FF76A000CDD0C /* AddressState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AddressState.cpp; path = "../../cpp-ethereum/libethereum/AddressState.cpp"; sourceTree = "<group>"; };
-		059F32BF190FF76A000CDD0C /* AddressState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressState.h; path = "../../cpp-ethereum/libethereum/AddressState.h"; sourceTree = "<group>"; };
-		059F32C0190FF76A000CDD0C /* BlockChain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BlockChain.cpp; path = "../../cpp-ethereum/libethereum/BlockChain.cpp"; sourceTree = "<group>"; };
-		059F32C1190FF76A000CDD0C /* BlockChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockChain.h; path = "../../cpp-ethereum/libethereum/BlockChain.h"; sourceTree = "<group>"; };
-		059F32C2190FF76A000CDD0C /* BlockInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BlockInfo.cpp; path = "../../cpp-ethereum/libethereum/BlockInfo.cpp"; sourceTree = "<group>"; };
-		059F32C3190FF76A000CDD0C /* BlockInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockInfo.h; path = "../../cpp-ethereum/libethereum/BlockInfo.h"; sourceTree = "<group>"; };
-		059F32C4190FF76A000CDD0C /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Client.cpp; path = "../../cpp-ethereum/libethereum/Client.cpp"; sourceTree = "<group>"; };
-		059F32C5190FF76A000CDD0C /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Client.h; path = "../../cpp-ethereum/libethereum/Client.h"; sourceTree = "<group>"; };
-		059F32C6190FF76A000CDD0C /* CommonEth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommonEth.cpp; path = "../../cpp-ethereum/libethereum/CommonEth.cpp"; sourceTree = "<group>"; };
-		059F32C7190FF76A000CDD0C /* CommonEth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonEth.h; path = "../../cpp-ethereum/libethereum/CommonEth.h"; sourceTree = "<group>"; };
-		059F32C8190FF76A000CDD0C /* Dagger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Dagger.cpp; path = "../../cpp-ethereum/libethereum/Dagger.cpp"; sourceTree = "<group>"; };
-		059F32C9190FF76A000CDD0C /* Dagger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dagger.h; path = "../../cpp-ethereum/libethereum/Dagger.h"; sourceTree = "<group>"; };
-		059F32CA190FF76A000CDD0C /* Defaults.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Defaults.cpp; path = "../../cpp-ethereum/libethereum/Defaults.cpp"; sourceTree = "<group>"; };
-		059F32CB190FF76A000CDD0C /* Defaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Defaults.h; path = "../../cpp-ethereum/libethereum/Defaults.h"; sourceTree = "<group>"; };
-		059F32CC190FF76A000CDD0C /* Exceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exceptions.h; path = "../../cpp-ethereum/libethereum/Exceptions.h"; sourceTree = "<group>"; };
-		059F32CD190FF76A000CDD0C /* ExtVMFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtVMFace.h; path = "../../cpp-ethereum/libethereum/ExtVMFace.h"; sourceTree = "<group>"; };
-		059F32CE190FF76A000CDD0C /* FeeStructure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FeeStructure.cpp; path = "../../cpp-ethereum/libethereum/FeeStructure.cpp"; sourceTree = "<group>"; };
-		059F32CF190FF76A000CDD0C /* FeeStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeeStructure.h; path = "../../cpp-ethereum/libethereum/FeeStructure.h"; sourceTree = "<group>"; };
-		059F32D0190FF76A000CDD0C /* Instruction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Instruction.cpp; path = "../../cpp-ethereum/libethereum/Instruction.cpp"; sourceTree = "<group>"; };
-		059F32D1190FF76A000CDD0C /* Instruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Instruction.h; path = "../../cpp-ethereum/libethereum/Instruction.h"; sourceTree = "<group>"; };
-		059F32D2190FF76A000CDD0C /* PeerNetwork.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PeerNetwork.cpp; path = "../../cpp-ethereum/libethereum/PeerNetwork.cpp"; sourceTree = "<group>"; };
-		059F32D3190FF76A000CDD0C /* PeerNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeerNetwork.h; path = "../../cpp-ethereum/libethereum/PeerNetwork.h"; sourceTree = "<group>"; };
-		059F32D4190FF76A000CDD0C /* PeerServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PeerServer.cpp; path = "../../cpp-ethereum/libethereum/PeerServer.cpp"; sourceTree = "<group>"; };
-		059F32D5190FF76A000CDD0C /* PeerServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeerServer.h; path = "../../cpp-ethereum/libethereum/PeerServer.h"; sourceTree = "<group>"; };
-		059F32D6190FF76A000CDD0C /* PeerSession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PeerSession.cpp; path = "../../cpp-ethereum/libethereum/PeerSession.cpp"; sourceTree = "<group>"; };
-		059F32D7190FF76A000CDD0C /* PeerSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeerSession.h; path = "../../cpp-ethereum/libethereum/PeerSession.h"; sourceTree = "<group>"; };
-		059F32D8190FF76A000CDD0C /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = State.cpp; path = "../../cpp-ethereum/libethereum/State.cpp"; sourceTree = "<group>"; };
-		059F32D9190FF76A000CDD0C /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = State.h; path = "../../cpp-ethereum/libethereum/State.h"; sourceTree = "<group>"; };
-		059F32DA190FF76A000CDD0C /* Transaction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Transaction.cpp; path = "../../cpp-ethereum/libethereum/Transaction.cpp"; sourceTree = "<group>"; };
-		059F32DB190FF76A000CDD0C /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transaction.h; path = "../../cpp-ethereum/libethereum/Transaction.h"; sourceTree = "<group>"; };
-		059F32DC190FF76A000CDD0C /* TransactionQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransactionQueue.cpp; path = "../../cpp-ethereum/libethereum/TransactionQueue.cpp"; sourceTree = "<group>"; };
-		059F32DD190FF76A000CDD0C /* TransactionQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionQueue.h; path = "../../cpp-ethereum/libethereum/TransactionQueue.h"; sourceTree = "<group>"; };
-		059F32DE190FF76A000CDD0C /* VM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VM.cpp; path = "../../cpp-ethereum/libethereum/VM.cpp"; sourceTree = "<group>"; };
-		059F32DF190FF76A000CDD0C /* VM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VM.h; path = "../../cpp-ethereum/libethereum/VM.h"; sourceTree = "<group>"; };
-		059F32F0190FF798000CDD0C /* ecdsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ecdsa.h; path = "../../cpp-ethereum/secp256k1/ecdsa.h"; sourceTree = "<group>"; };
-		059F32F1190FF798000CDD0C /* ecmult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ecmult.h; path = "../../cpp-ethereum/secp256k1/ecmult.h"; sourceTree = "<group>"; };
-		059F32F2190FF798000CDD0C /* field_gmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = field_gmp.h; path = "../../cpp-ethereum/secp256k1/field_gmp.h"; sourceTree = "<group>"; };
-		059F32F3190FF798000CDD0C /* field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = field.h; path = "../../cpp-ethereum/secp256k1/field.h"; sourceTree = "<group>"; };
-		059F32F4190FF798000CDD0C /* group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = group.h; path = "../../cpp-ethereum/secp256k1/group.h"; sourceTree = "<group>"; };
-		059F32F5190FF798000CDD0C /* num_boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = num_boost.h; path = "../../cpp-ethereum/secp256k1/num_boost.h"; sourceTree = "<group>"; };
-		059F32F6190FF798000CDD0C /* num_gmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = num_gmp.h; path = "../../cpp-ethereum/secp256k1/num_gmp.h"; sourceTree = "<group>"; };
-		059F32F7190FF798000CDD0C /* num_openssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = num_openssl.h; path = "../../cpp-ethereum/secp256k1/num_openssl.h"; sourceTree = "<group>"; };
-		059F32F8190FF798000CDD0C /* num.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = num.h; path = "../../cpp-ethereum/secp256k1/num.h"; sourceTree = "<group>"; };
-		059F32F9190FF798000CDD0C /* secp256k1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = secp256k1.c; path = "../../cpp-ethereum/secp256k1/secp256k1.c"; sourceTree = "<group>"; };
-		059F32FA190FF798000CDD0C /* secp256k1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = secp256k1.h; path = "../../cpp-ethereum/secp256k1/secp256k1.h"; sourceTree = "<group>"; };
-		059F32FB190FF798000CDD0C /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = util.h; path = "../../cpp-ethereum/secp256k1/util.h"; sourceTree = "<group>"; };
-		059F32FE190FF7C4000CDD0C /* ecdsa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecdsa.h; sourceTree = "<group>"; };
-		059F32FF190FF7C4000CDD0C /* ecmult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ecmult.h; sourceTree = "<group>"; };
-		059F3300190FF7C4000CDD0C /* field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field.h; sourceTree = "<group>"; };
-		059F3301190FF7C4000CDD0C /* field_10x26.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field_10x26.h; sourceTree = "<group>"; };
-		059F3302190FF7C4000CDD0C /* field_5x52.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field_5x52.h; sourceTree = "<group>"; };
-		059F3303190FF7C4000CDD0C /* field_5x52_asm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field_5x52_asm.h; sourceTree = "<group>"; };
-		059F3304190FF7C4000CDD0C /* field_5x52_int128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field_5x52_int128.h; sourceTree = "<group>"; };
-		059F3305190FF7C4000CDD0C /* field_gmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = field_gmp.h; sourceTree = "<group>"; };
-		059F3306190FF7C4000CDD0C /* group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = group.h; sourceTree = "<group>"; };
-		059F3307190FF7C4000CDD0C /* num.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = num.h; sourceTree = "<group>"; };
-		059F3308190FF7C4000CDD0C /* num_boost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = num_boost.h; sourceTree = "<group>"; };
-		059F3309190FF7C4000CDD0C /* num_gmp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = num_gmp.h; sourceTree = "<group>"; };
-		059F330A190FF7C4000CDD0C /* num_openssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = num_openssl.h; sourceTree = "<group>"; };
-		059F330B190FF7C4000CDD0C /* util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = util.h; sourceTree = "<group>"; };
+		059F331A19120427000CDD0C /* AddressState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AddressState.cpp; path = "../../cpp-ethereum/libethereum/AddressState.cpp"; sourceTree = "<group>"; };
+		059F331B19120427000CDD0C /* AddressState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressState.h; path = "../../cpp-ethereum/libethereum/AddressState.h"; sourceTree = "<group>"; };
+		059F331C19120427000CDD0C /* BlockChain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BlockChain.cpp; path = "../../cpp-ethereum/libethereum/BlockChain.cpp"; sourceTree = "<group>"; };
+		059F331D19120427000CDD0C /* BlockChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockChain.h; path = "../../cpp-ethereum/libethereum/BlockChain.h"; sourceTree = "<group>"; };
+		059F331E19120427000CDD0C /* BlockInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BlockInfo.cpp; path = "../../cpp-ethereum/libethereum/BlockInfo.cpp"; sourceTree = "<group>"; };
+		059F331F19120427000CDD0C /* BlockInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlockInfo.h; path = "../../cpp-ethereum/libethereum/BlockInfo.h"; sourceTree = "<group>"; };
+		059F332019120427000CDD0C /* Client.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Client.cpp; path = "../../cpp-ethereum/libethereum/Client.cpp"; sourceTree = "<group>"; };
+		059F332119120427000CDD0C /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Client.h; path = "../../cpp-ethereum/libethereum/Client.h"; sourceTree = "<group>"; };
+		059F332219120427000CDD0C /* CommonEth.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommonEth.cpp; path = "../../cpp-ethereum/libethereum/CommonEth.cpp"; sourceTree = "<group>"; };
+		059F332319120427000CDD0C /* CommonEth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonEth.h; path = "../../cpp-ethereum/libethereum/CommonEth.h"; sourceTree = "<group>"; };
+		059F332419120427000CDD0C /* Dagger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Dagger.cpp; path = "../../cpp-ethereum/libethereum/Dagger.cpp"; sourceTree = "<group>"; };
+		059F332519120427000CDD0C /* Dagger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dagger.h; path = "../../cpp-ethereum/libethereum/Dagger.h"; sourceTree = "<group>"; };
+		059F332619120427000CDD0C /* Defaults.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Defaults.cpp; path = "../../cpp-ethereum/libethereum/Defaults.cpp"; sourceTree = "<group>"; };
+		059F332719120427000CDD0C /* Defaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Defaults.h; path = "../../cpp-ethereum/libethereum/Defaults.h"; sourceTree = "<group>"; };
+		059F332819120427000CDD0C /* Exceptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exceptions.h; path = "../../cpp-ethereum/libethereum/Exceptions.h"; sourceTree = "<group>"; };
+		059F332919120427000CDD0C /* ExtVMFace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtVMFace.h; path = "../../cpp-ethereum/libethereum/ExtVMFace.h"; sourceTree = "<group>"; };
+		059F332A19120427000CDD0C /* FeeStructure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FeeStructure.cpp; path = "../../cpp-ethereum/libethereum/FeeStructure.cpp"; sourceTree = "<group>"; };
+		059F332B19120427000CDD0C /* FeeStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeeStructure.h; path = "../../cpp-ethereum/libethereum/FeeStructure.h"; sourceTree = "<group>"; };
+		059F332C19120427000CDD0C /* Instruction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Instruction.cpp; path = "../../cpp-ethereum/libethereum/Instruction.cpp"; sourceTree = "<group>"; };
+		059F332D19120427000CDD0C /* Instruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Instruction.h; path = "../../cpp-ethereum/libethereum/Instruction.h"; sourceTree = "<group>"; };
+		059F332E19120427000CDD0C /* PeerNetwork.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PeerNetwork.cpp; path = "../../cpp-ethereum/libethereum/PeerNetwork.cpp"; sourceTree = "<group>"; };
+		059F332F19120427000CDD0C /* PeerNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeerNetwork.h; path = "../../cpp-ethereum/libethereum/PeerNetwork.h"; sourceTree = "<group>"; };
+		059F333019120427000CDD0C /* PeerServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PeerServer.cpp; path = "../../cpp-ethereum/libethereum/PeerServer.cpp"; sourceTree = "<group>"; };
+		059F333119120427000CDD0C /* PeerServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeerServer.h; path = "../../cpp-ethereum/libethereum/PeerServer.h"; sourceTree = "<group>"; };
+		059F333219120427000CDD0C /* PeerSession.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PeerSession.cpp; path = "../../cpp-ethereum/libethereum/PeerSession.cpp"; sourceTree = "<group>"; };
+		059F333319120427000CDD0C /* PeerSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeerSession.h; path = "../../cpp-ethereum/libethereum/PeerSession.h"; sourceTree = "<group>"; };
+		059F333419120427000CDD0C /* State.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = State.cpp; path = "../../cpp-ethereum/libethereum/State.cpp"; sourceTree = "<group>"; };
+		059F333519120427000CDD0C /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = State.h; path = "../../cpp-ethereum/libethereum/State.h"; sourceTree = "<group>"; };
+		059F333619120427000CDD0C /* Transaction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Transaction.cpp; path = "../../cpp-ethereum/libethereum/Transaction.cpp"; sourceTree = "<group>"; };
+		059F333719120427000CDD0C /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transaction.h; path = "../../cpp-ethereum/libethereum/Transaction.h"; sourceTree = "<group>"; };
+		059F333819120427000CDD0C /* TransactionQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransactionQueue.cpp; path = "../../cpp-ethereum/libethereum/TransactionQueue.cpp"; sourceTree = "<group>"; };
+		059F333919120427000CDD0C /* TransactionQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionQueue.h; path = "../../cpp-ethereum/libethereum/TransactionQueue.h"; sourceTree = "<group>"; };
+		059F333A19120427000CDD0C /* VM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VM.cpp; path = "../../cpp-ethereum/libethereum/VM.cpp"; sourceTree = "<group>"; };
+		059F333B19120427000CDD0C /* VM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VM.h; path = "../../cpp-ethereum/libethereum/VM.h"; sourceTree = "<group>"; };
+		059F335D191205DB000CDD0C /* boost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = boost.framework; path = "../../ios-boost/framework/boost.framework"; sourceTree = "<group>"; };
+		059F335F191205EC000CDD0C /* cryptopp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = cryptopp.framework; path = "../../ios-cryptopp/framework/cryptopp.framework"; sourceTree = "<group>"; };
+		059F336119120607000CDD0C /* gmp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gmp.framework; path = "../../ios-gmp/framework/gmp.framework"; sourceTree = "<group>"; };
+		059F336319120632000CDD0C /* leveldb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = leveldb.framework; path = "../../ios-leveldb/framework/leveldb.framework"; sourceTree = "<group>"; };
+		059F336519120641000CDD0C /* libethcore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libethcore.framework; path = "../../ios-libethcore/framework/libethcore.framework"; sourceTree = "<group>"; };
+		059F3367191206AD000CDD0C /* miniupnpc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = miniupnpc.framework; path = "../../ios-miniupnpc/framework/miniupnpc.framework"; sourceTree = "<group>"; };
+		059F3369191206BC000CDD0C /* secp256k1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = secp256k1.framework; path = "../../ios-secp256k1/framework/secp256k1.framework"; sourceTree = "<group>"; };
+		059F337E19120BE7000CDD0C /* ethcore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ethcore.xcodeproj; path = ../ethcore/ethcore.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +158,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059F338719120BFD000CDD0C /* libethcore.a in Frameworks */,
+				059F336A191206BC000CDD0C /* secp256k1.framework in Frameworks */,
+				059F3368191206AE000CDD0C /* miniupnpc.framework in Frameworks */,
+				059F336419120632000CDD0C /* leveldb.framework in Frameworks */,
+				059F336219120607000CDD0C /* gmp.framework in Frameworks */,
+				059F3360191205EC000CDD0C /* cryptopp.framework in Frameworks */,
+				059F335E191205DB000CDD0C /* boost.framework in Frameworks */,
 				059F3297190FF67D000CDD0C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,6 +186,7 @@
 		059F328A190FF67D000CDD0C = {
 			isa = PBXGroup;
 			children = (
+				059F337E19120BE7000CDD0C /* ethcore.xcodeproj */,
 				059F3298190FF67D000CDD0C /* ethereum */,
 				059F32AC190FF67D000CDD0C /* ethereumTests */,
 				059F3295190FF67D000CDD0C /* Frameworks */,
@@ -172,6 +206,13 @@
 		059F3295190FF67D000CDD0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				059F3369191206BC000CDD0C /* secp256k1.framework */,
+				059F3367191206AD000CDD0C /* miniupnpc.framework */,
+				059F336519120641000CDD0C /* libethcore.framework */,
+				059F336319120632000CDD0C /* leveldb.framework */,
+				059F336119120607000CDD0C /* gmp.framework */,
+				059F335F191205EC000CDD0C /* cryptopp.framework */,
+				059F335D191205DB000CDD0C /* boost.framework */,
 				059F3296190FF67D000CDD0C /* Foundation.framework */,
 				059F32A4190FF67D000CDD0C /* XCTest.framework */,
 				059F32A7190FF67D000CDD0C /* UIKit.framework */,
@@ -182,8 +223,40 @@
 		059F3298190FF67D000CDD0C /* ethereum */ = {
 			isa = PBXGroup;
 			children = (
-				059F32BD190FF6B7000CDD0C /* secp256k1 */,
-				059F32BC190FF6A4000CDD0C /* libethereum */,
+				059F331A19120427000CDD0C /* AddressState.cpp */,
+				059F331B19120427000CDD0C /* AddressState.h */,
+				059F331C19120427000CDD0C /* BlockChain.cpp */,
+				059F331D19120427000CDD0C /* BlockChain.h */,
+				059F331E19120427000CDD0C /* BlockInfo.cpp */,
+				059F331F19120427000CDD0C /* BlockInfo.h */,
+				059F332019120427000CDD0C /* Client.cpp */,
+				059F332119120427000CDD0C /* Client.h */,
+				059F332219120427000CDD0C /* CommonEth.cpp */,
+				059F332319120427000CDD0C /* CommonEth.h */,
+				059F332419120427000CDD0C /* Dagger.cpp */,
+				059F332519120427000CDD0C /* Dagger.h */,
+				059F332619120427000CDD0C /* Defaults.cpp */,
+				059F332719120427000CDD0C /* Defaults.h */,
+				059F332819120427000CDD0C /* Exceptions.h */,
+				059F332919120427000CDD0C /* ExtVMFace.h */,
+				059F332A19120427000CDD0C /* FeeStructure.cpp */,
+				059F332B19120427000CDD0C /* FeeStructure.h */,
+				059F332C19120427000CDD0C /* Instruction.cpp */,
+				059F332D19120427000CDD0C /* Instruction.h */,
+				059F332E19120427000CDD0C /* PeerNetwork.cpp */,
+				059F332F19120427000CDD0C /* PeerNetwork.h */,
+				059F333019120427000CDD0C /* PeerServer.cpp */,
+				059F333119120427000CDD0C /* PeerServer.h */,
+				059F333219120427000CDD0C /* PeerSession.cpp */,
+				059F333319120427000CDD0C /* PeerSession.h */,
+				059F333419120427000CDD0C /* State.cpp */,
+				059F333519120427000CDD0C /* State.h */,
+				059F333619120427000CDD0C /* Transaction.cpp */,
+				059F333719120427000CDD0C /* Transaction.h */,
+				059F333819120427000CDD0C /* TransactionQueue.cpp */,
+				059F333919120427000CDD0C /* TransactionQueue.h */,
+				059F333A19120427000CDD0C /* VM.cpp */,
+				059F333B19120427000CDD0C /* VM.h */,
 				059F3299190FF67D000CDD0C /* Supporting Files */,
 			);
 			path = ethereum;
@@ -215,87 +288,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		059F32BC190FF6A4000CDD0C /* libethereum */ = {
+		059F337F19120BE7000CDD0C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				059F32BE190FF76A000CDD0C /* AddressState.cpp */,
-				059F32BF190FF76A000CDD0C /* AddressState.h */,
-				059F32C0190FF76A000CDD0C /* BlockChain.cpp */,
-				059F32C1190FF76A000CDD0C /* BlockChain.h */,
-				059F32C2190FF76A000CDD0C /* BlockInfo.cpp */,
-				059F32C3190FF76A000CDD0C /* BlockInfo.h */,
-				059F32C4190FF76A000CDD0C /* Client.cpp */,
-				059F32C5190FF76A000CDD0C /* Client.h */,
-				059F32C6190FF76A000CDD0C /* CommonEth.cpp */,
-				059F32C7190FF76A000CDD0C /* CommonEth.h */,
-				059F32C8190FF76A000CDD0C /* Dagger.cpp */,
-				059F32C9190FF76A000CDD0C /* Dagger.h */,
-				059F32CA190FF76A000CDD0C /* Defaults.cpp */,
-				059F32CB190FF76A000CDD0C /* Defaults.h */,
-				059F32CC190FF76A000CDD0C /* Exceptions.h */,
-				059F32CD190FF76A000CDD0C /* ExtVMFace.h */,
-				059F32CE190FF76A000CDD0C /* FeeStructure.cpp */,
-				059F32CF190FF76A000CDD0C /* FeeStructure.h */,
-				059F32D0190FF76A000CDD0C /* Instruction.cpp */,
-				059F32D1190FF76A000CDD0C /* Instruction.h */,
-				059F32D2190FF76A000CDD0C /* PeerNetwork.cpp */,
-				059F32D3190FF76A000CDD0C /* PeerNetwork.h */,
-				059F32D4190FF76A000CDD0C /* PeerServer.cpp */,
-				059F32D5190FF76A000CDD0C /* PeerServer.h */,
-				059F32D6190FF76A000CDD0C /* PeerSession.cpp */,
-				059F32D7190FF76A000CDD0C /* PeerSession.h */,
-				059F32D8190FF76A000CDD0C /* State.cpp */,
-				059F32D9190FF76A000CDD0C /* State.h */,
-				059F32DA190FF76A000CDD0C /* Transaction.cpp */,
-				059F32DB190FF76A000CDD0C /* Transaction.h */,
-				059F32DC190FF76A000CDD0C /* TransactionQueue.cpp */,
-				059F32DD190FF76A000CDD0C /* TransactionQueue.h */,
-				059F32DE190FF76A000CDD0C /* VM.cpp */,
-				059F32DF190FF76A000CDD0C /* VM.h */,
+				059F338419120BE8000CDD0C /* libethcore.a */,
+				059F338619120BE8000CDD0C /* ethcoreTests.xctest */,
 			);
-			name = libethereum;
-			sourceTree = "<group>";
-		};
-		059F32BD190FF6B7000CDD0C /* secp256k1 */ = {
-			isa = PBXGroup;
-			children = (
-				059F32FD190FF7C4000CDD0C /* impl */,
-				059F32F0190FF798000CDD0C /* ecdsa.h */,
-				059F32F1190FF798000CDD0C /* ecmult.h */,
-				059F32F2190FF798000CDD0C /* field_gmp.h */,
-				059F32F3190FF798000CDD0C /* field.h */,
-				059F32F4190FF798000CDD0C /* group.h */,
-				059F32F5190FF798000CDD0C /* num_boost.h */,
-				059F32F6190FF798000CDD0C /* num_gmp.h */,
-				059F32F7190FF798000CDD0C /* num_openssl.h */,
-				059F32F8190FF798000CDD0C /* num.h */,
-				059F32F9190FF798000CDD0C /* secp256k1.c */,
-				059F32FA190FF798000CDD0C /* secp256k1.h */,
-				059F32FB190FF798000CDD0C /* util.h */,
-			);
-			name = secp256k1;
-			sourceTree = "<group>";
-		};
-		059F32FD190FF7C4000CDD0C /* impl */ = {
-			isa = PBXGroup;
-			children = (
-				059F32FE190FF7C4000CDD0C /* ecdsa.h */,
-				059F32FF190FF7C4000CDD0C /* ecmult.h */,
-				059F3300190FF7C4000CDD0C /* field.h */,
-				059F3301190FF7C4000CDD0C /* field_10x26.h */,
-				059F3302190FF7C4000CDD0C /* field_5x52.h */,
-				059F3303190FF7C4000CDD0C /* field_5x52_asm.h */,
-				059F3304190FF7C4000CDD0C /* field_5x52_int128.h */,
-				059F3305190FF7C4000CDD0C /* field_gmp.h */,
-				059F3306190FF7C4000CDD0C /* group.h */,
-				059F3307190FF7C4000CDD0C /* num.h */,
-				059F3308190FF7C4000CDD0C /* num_boost.h */,
-				059F3309190FF7C4000CDD0C /* num_gmp.h */,
-				059F330A190FF7C4000CDD0C /* num_openssl.h */,
-				059F330B190FF7C4000CDD0C /* util.h */,
-			);
-			name = impl;
-			path = "../../cpp-ethereum/secp256k1/impl";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +311,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				059F338C19128C4E000CDD0C /* PBXTargetDependency */,
 			);
 			name = ethereum;
 			productName = ethereum;
@@ -355,6 +355,12 @@
 			mainGroup = 059F328A190FF67D000CDD0C;
 			productRefGroup = 059F3294190FF67D000CDD0C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 059F337F19120BE7000CDD0C /* Products */;
+					ProjectRef = 059F337E19120BE7000CDD0C /* ethcore.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				059F3292190FF67D000CDD0C /* ethereum */,
@@ -363,11 +369,45 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		059F338419120BE8000CDD0C /* libethcore.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libethcore.a;
+			remoteRef = 059F338319120BE8000CDD0C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		059F338619120BE8000CDD0C /* ethcoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ethcoreTests.xctest;
+			remoteRef = 059F338519120BE8000CDD0C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		059F32A1190FF67D000CDD0C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				059F334C19120545000CDD0C /* AddressState.h in Resources */,
+				059F334D19120545000CDD0C /* BlockChain.h in Resources */,
+				059F334E19120545000CDD0C /* BlockInfo.h in Resources */,
+				059F334F19120545000CDD0C /* Client.h in Resources */,
+				059F335019120545000CDD0C /* CommonEth.h in Resources */,
+				059F335119120545000CDD0C /* Dagger.h in Resources */,
+				059F335219120545000CDD0C /* Defaults.h in Resources */,
+				059F335319120545000CDD0C /* ExtVMFace.h in Resources */,
+				059F335419120545000CDD0C /* FeeStructure.h in Resources */,
+				059F335519120545000CDD0C /* Instruction.h in Resources */,
+				059F335619120545000CDD0C /* PeerNetwork.h in Resources */,
+				059F335719120545000CDD0C /* PeerServer.h in Resources */,
+				059F335819120545000CDD0C /* PeerSession.h in Resources */,
+				059F335919120545000CDD0C /* State.h in Resources */,
+				059F335A19120545000CDD0C /* Transaction.h in Resources */,
+				059F335B19120545000CDD0C /* TransactionQueue.h in Resources */,
+				059F335C19120545000CDD0C /* VM.h in Resources */,
 				059F32B1190FF67D000CDD0C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,23 +419,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				059F32E2190FF76A000CDD0C /* BlockInfo.cpp in Sources */,
-				059F32E0190FF76A000CDD0C /* AddressState.cpp in Sources */,
-				059F32E9190FF76A000CDD0C /* PeerNetwork.cpp in Sources */,
-				059F32E7190FF76A000CDD0C /* FeeStructure.cpp in Sources */,
-				059F32FC190FF798000CDD0C /* secp256k1.c in Sources */,
-				059F32E3190FF76A000CDD0C /* Client.cpp in Sources */,
-				059F32E4190FF76A000CDD0C /* CommonEth.cpp in Sources */,
-				059F32EC190FF76A000CDD0C /* State.cpp in Sources */,
-				059F32EA190FF76A000CDD0C /* PeerServer.cpp in Sources */,
-				059F32EE190FF76A000CDD0C /* TransactionQueue.cpp in Sources */,
-				059F32E8190FF76A000CDD0C /* Instruction.cpp in Sources */,
-				059F32EF190FF76A000CDD0C /* VM.cpp in Sources */,
-				059F32EB190FF76A000CDD0C /* PeerSession.cpp in Sources */,
-				059F32E6190FF76A000CDD0C /* Defaults.cpp in Sources */,
-				059F32E1190FF76A000CDD0C /* BlockChain.cpp in Sources */,
-				059F32ED190FF76A000CDD0C /* Transaction.cpp in Sources */,
-				059F32E5190FF76A000CDD0C /* Dagger.cpp in Sources */,
+				059F333E19120427000CDD0C /* BlockInfo.cpp in Sources */,
+				059F333C19120427000CDD0C /* AddressState.cpp in Sources */,
+				059F334519120427000CDD0C /* PeerNetwork.cpp in Sources */,
+				059F334319120427000CDD0C /* FeeStructure.cpp in Sources */,
+				059F333F19120427000CDD0C /* Client.cpp in Sources */,
+				059F334019120427000CDD0C /* CommonEth.cpp in Sources */,
+				059F334819120427000CDD0C /* State.cpp in Sources */,
+				059F334619120427000CDD0C /* PeerServer.cpp in Sources */,
+				059F334A19120427000CDD0C /* TransactionQueue.cpp in Sources */,
+				059F334419120427000CDD0C /* Instruction.cpp in Sources */,
+				059F334B19120427000CDD0C /* VM.cpp in Sources */,
+				059F334719120427000CDD0C /* PeerSession.cpp in Sources */,
+				059F334219120427000CDD0C /* Defaults.cpp in Sources */,
+				059F333D19120427000CDD0C /* BlockChain.cpp in Sources */,
+				059F334919120427000CDD0C /* Transaction.cpp in Sources */,
+				059F334119120427000CDD0C /* Dagger.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +453,11 @@
 			isa = PBXTargetDependency;
 			target = 059F3292190FF67D000CDD0C /* ethereum */;
 			targetProxy = 059F32A9190FF67D000CDD0C /* PBXContainerItemProxy */;
+		};
+		059F338C19128C4E000CDD0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ethcore;
+			targetProxy = 059F338B19128C4E000CDD0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -501,9 +545,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/ethereum.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"../../ios-boost/framework",
+					"../../ios-cryptopp/framework",
+					"../../ios-gmp/framework",
+					"../../ios-leveldb/framework",
+					"../../ios-libethcore/framework",
+					"../../ios-miniupnpc/framework",
+					"../../ios-secp256k1/framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ethereum/ethereum-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../ios-cryptopp/framework/cryptopp.framework/Headers",
+				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wno-conversion",
+					"-Wno-constexpr-not-const",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -515,8 +579,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/ethereum.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"../../ios-boost/framework",
+					"../../ios-cryptopp/framework",
+					"../../ios-gmp/framework",
+					"../../ios-leveldb/framework",
+					"../../ios-libethcore/framework",
+					"../../ios-miniupnpc/framework",
+					"../../ios-secp256k1/framework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ethereum/ethereum-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"../../ios-cryptopp/framework/cryptopp.framework/Headers",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wno-conversion",
+					"-Wno-constexpr-not-const",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -539,6 +623,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ethereumTests/ethereumTests-Info.plist";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wno-conversion",
+					"-Wno-constexpr-not-const",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -555,6 +644,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ethereum/ethereum-Prefix.pch";
 				INFOPLIST_FILE = "ethereumTests/ethereumTests-Info.plist";
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-Wno-conversion",
+					"-Wno-constexpr-not-const",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -579,6 +673,7 @@
 				059F32B8190FF67D000CDD0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		059F32B9190FF67D000CDD0C /* Build configuration list for PBXNativeTarget "ethereumTests" */ = {
 			isa = XCConfigurationList;
@@ -587,6 +682,7 @@
 				059F32BB190FF67D000CDD0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
