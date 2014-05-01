@@ -1,33 +1,34 @@
 #!/bin/bash
 
 ( cd ios-boost; \
-  ./boost.sh \
-  xcrun -sdk iphoneos lipo -info framework/boost.framework/Versions/A/boost )
+  ./boost.sh )
 
 ( cd ios-miniupnpc; \
-  ./miniupnpc.sh \
-  xcrun -sdk iphoneos lipo -info framework/miniupnpc.framework/Versions/A/miniupnpc )
+  ./miniupnpc.sh )
 
 ( cd ios-cryptopp; \
-  ./cryptopp.sh \
-  xcrun -sdk iphoneos lipo -info framework/cryptopp.framework/Versions/A/cryptopp )
+  ./cryptopp.sh )
 
 ( cd ios-gmp; \
-  ./gmp.sh \
-  xcrun -sdk iphoneos lipo -info framework/gmp.framework/Versions/A/gmp )
+  ./gmp.sh )
 
 ( cd ios-leveldb; \
-  ./leveldb.sh \
-  xcrun -sdk iphoneos lipo -info framework/leveldb.framework/Versions/A/leveldb )
+  ./leveldb.sh )
 
 ( cd ios-secp256k1; \
- ./secp256k1.sh \
- xcrun -sdk iphoneos lipo -info framework/secp256k1.framework/Versions/A/secp256k1 )
+ ./secp256k1.sh )
 
 ( cd ios-libethcore; \
-  ./ethcore.sh \
-  xcrun -sdk iphoneos lipo -info framework/ethcore.framework/Versions/A/ethcore )
+  ./ethcore.sh )
 
 ( cd ios-ethereum; \
- ./ethereum.sh \
- xcrun -sdk iphoneos lipo -info framework/ethereum.framework/Versions/A/ethereum )
+ ./ethereum.sh )
+
+xcrun -sdk iphoneos lipo -info ios-boost/framework/boost.framework/Versions/A/boost
+xcrun -sdk iphoneos lipo -info ios-miniupnpc/framework/miniupnpc.framework/Versions/A/miniupnpc
+xcrun -sdk iphoneos lipo -info ios-cryptopp/framework/cryptopp.framework/Versions/A/cryptopp
+xcrun -sdk iphoneos lipo -info ios-gmp/framework/gmp.framework/Versions/A/gmp
+xcrun -sdk iphoneos lipo -info ios-leveldb/framework/leveldb.framework/Versions/A/leveldb
+xcrun -sdk iphoneos lipo -info ios-secp256k1/framework/secp256k1.framework/Versions/A/secp256k1
+xcrun -sdk iphoneos lipo -info ios-libethcore/framework/ethcore.framework/Versions/A/ethcore
+xcrun -sdk iphoneos lipo -info ios-ethereum/framework/ethereum.framework/Versions/A/ethereum
