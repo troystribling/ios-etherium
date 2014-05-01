@@ -3,10 +3,10 @@
 # Bundle config
 : ${BUNDLE:=cpp-ethereum.zip}
 : ${DOWNLOAD_URL:=https://github.com/troystribling/cpp-ethereum/archive/develop.zip}
-: ${LIBRARY:=libethereum.a}
+: ${LIBRARY:=libsecp256k1.a}
 
 # framework config
-: ${FRAMEWORK_NAME:=ethereum}
+: ${FRAMEWORK_NAME:=secp256k1}
 : ${FRAMEWORK_VERSION:=A}
 : ${FRAMEWORK_CURRENT_VERSION:=develop}
 : ${FRAMEWORK_IDENTIFIER:=org.ethereum}
@@ -17,27 +17,27 @@
 source ../shared.sh
 source ../ethereum_shared.sh
 
-LIBRARY_DEPENDENCIES="boost cryptopp gmp leveldb miniupnpc libethcore secp256k1"
-LIBETHREUM_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum
+LIBRARY_DEPENDENCIES="gmp"
+SECP256K1_DIR=$SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1
 
 applyPatches() {
   echo "Apply patches..."
   mv $SRC_DIR/cpp-ethereum-$FRAMEWORK_CURRENT_VERSION $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION
-  cp $LIBRARY_ROOT/Makefile-ios $LIBETHREUM_DIR/Makefile
-  cp $LIBRARY_ROOT/find_sources $LIBETHREUM_DIR
+  cp $LIBRARY_ROOT/Makefile-ios $SECP256K1_DIR/Makefile
+  cp $LIBRARY_ROOT/find_sources $SECP256K1_DIR
   doneSection
 }
 
 moveHeadersToFramework() {
   echo "Copying includes to $FRAMEWORK_BUNDLE/Headers/..."
-  cp -r $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum/*.h  $FRAMEWORK_BUNDLE/Headers/
+  cp -r $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1/secp256k1.h  $FRAMEWORK_BUNDLE/Headers/
   doneSection
 }
 
 compileSrcForArch() {
   local buildArch=$1
-  echo "Building libethereum for architecture $buildArch..."
-  ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/libethereum; \
+  echo "Building secp256k1 for architecture $buildArch..."
+  ( cd $SRC_DIR/$FRAMEWORK_NAME-$FRAMEWORK_CURRENT_VERSION/secp256k1; \
     make clean; \
     make; \
     mkdir -p $BUILD_DIR/$buildArch; \

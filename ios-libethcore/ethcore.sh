@@ -41,7 +41,7 @@ compileSrcForArch() {
     make clean; \
     make; \
     mkdir -p $BUILD_DIR/$buildArch; \
-    mv *.o $BUILD_DIR/$buildArch )
+    mv $LIBRARY $BUILD_DIR/$buildArch )
   doneSection
 }
 
