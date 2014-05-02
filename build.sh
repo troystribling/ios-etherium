@@ -30,5 +30,5 @@ xcrun -sdk iphoneos lipo -info ios-cryptopp/framework/cryptopp.framework/Version
 xcrun -sdk iphoneos lipo -info ios-gmp/framework/gmp.framework/Versions/A/gmp
 xcrun -sdk iphoneos lipo -info ios-leveldb/framework/leveldb.framework/Versions/A/leveldb
 xcrun -sdk iphoneos lipo -info ios-secp256k1/framework/secp256k1.framework/Versions/A/secp256k1
-xcrun -sdk iphoneos lipo -info ios-libethcore/framework/ethcore.framework/Versions/A/ethcore
+xcrun -sdk iphoneos lipo -info ios-libethcore/framework/libethcore.framework/Versions/A/libethcore
 xcrun -sdk iphoneos lipo -info ios-ethereum/framework/ethereum.framework/Versions/A/ethereum
