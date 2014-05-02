@@ -54,6 +54,24 @@
 		059F3368191206AE000CDD0C /* miniupnpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3367191206AD000CDD0C /* miniupnpc.framework */; };
 		059F336A191206BC000CDD0C /* secp256k1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F3369191206BC000CDD0C /* secp256k1.framework */; };
 		059F338719120BFD000CDD0C /* libethcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059F338419120BE8000CDD0C /* libethcore.a */; };
+		059F338E191360E6000CDD0C /* AddressState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F331B19120427000CDD0C /* AddressState.h */; };
+		059F338F191360E6000CDD0C /* BlockChain.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F331D19120427000CDD0C /* BlockChain.h */; };
+		059F3390191360E6000CDD0C /* BlockInfo.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F331F19120427000CDD0C /* BlockInfo.h */; };
+		059F3391191360E6000CDD0C /* Client.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F332119120427000CDD0C /* Client.h */; };
+		059F3392191360E6000CDD0C /* CommonEth.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F332319120427000CDD0C /* CommonEth.h */; };
+		059F3393191360E6000CDD0C /* Dagger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F332519120427000CDD0C /* Dagger.h */; };
+		059F3394191360E6000CDD0C /* Defaults.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F332719120427000CDD0C /* Defaults.h */; };
+		059F3395191360E6000CDD0C /* Exceptions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F332819120427000CDD0C /* Exceptions.h */; };
+		059F3396191360E7000CDD0C /* ExtVMFace.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F332919120427000CDD0C /* ExtVMFace.h */; };
+		059F3397191360E7000CDD0C /* FeeStructure.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F332B19120427000CDD0C /* FeeStructure.h */; };
+		059F3398191360E7000CDD0C /* Instruction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F332D19120427000CDD0C /* Instruction.h */; };
+		059F3399191360E7000CDD0C /* PeerNetwork.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F332F19120427000CDD0C /* PeerNetwork.h */; };
+		059F339A191360E7000CDD0C /* PeerServer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F333119120427000CDD0C /* PeerServer.h */; };
+		059F339B191360E7000CDD0C /* PeerSession.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F333319120427000CDD0C /* PeerSession.h */; };
+		059F339C191360E7000CDD0C /* State.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F333519120427000CDD0C /* State.h */; };
+		059F339D191360E7000CDD0C /* Transaction.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F333719120427000CDD0C /* Transaction.h */; };
+		059F339E191360E7000CDD0C /* TransactionQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F333919120427000CDD0C /* TransactionQueue.h */; };
+		059F339F191360E7000CDD0C /* VM.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 059F333B19120427000CDD0C /* VM.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +112,24 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				059F338E191360E6000CDD0C /* AddressState.h in CopyFiles */,
+				059F338F191360E6000CDD0C /* BlockChain.h in CopyFiles */,
+				059F3390191360E6000CDD0C /* BlockInfo.h in CopyFiles */,
+				059F3391191360E6000CDD0C /* Client.h in CopyFiles */,
+				059F3392191360E6000CDD0C /* CommonEth.h in CopyFiles */,
+				059F3393191360E6000CDD0C /* Dagger.h in CopyFiles */,
+				059F3394191360E6000CDD0C /* Defaults.h in CopyFiles */,
+				059F3395191360E6000CDD0C /* Exceptions.h in CopyFiles */,
+				059F3396191360E7000CDD0C /* ExtVMFace.h in CopyFiles */,
+				059F3397191360E7000CDD0C /* FeeStructure.h in CopyFiles */,
+				059F3398191360E7000CDD0C /* Instruction.h in CopyFiles */,
+				059F3399191360E7000CDD0C /* PeerNetwork.h in CopyFiles */,
+				059F339A191360E7000CDD0C /* PeerServer.h in CopyFiles */,
+				059F339B191360E7000CDD0C /* PeerSession.h in CopyFiles */,
+				059F339C191360E7000CDD0C /* State.h in CopyFiles */,
+				059F339D191360E7000CDD0C /* Transaction.h in CopyFiles */,
+				059F339E191360E7000CDD0C /* TransactionQueue.h in CopyFiles */,
+				059F339F191360E7000CDD0C /* VM.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
