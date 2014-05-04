@@ -24,7 +24,7 @@ exportConfig() {
   else
     IOS_SYSROOT=$XCODE_DEVICE_SDK
   fi
-  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT"
+  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -std=c++11 -stdlib=libc++"
   if [ "$IOS_ARCH" == "armv7s" ] || [ "$IOS_ARCH" == "armv7" ]; then
     CXXFLAGS="$CXXFLAGS -mios-version-min=6.0"
   else
