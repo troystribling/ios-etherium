@@ -65,15 +65,15 @@ echo "================================================================="
 showConfig
 developerToolsPresent
 if [ "$ENV_ERROR" == "0" ]; then
-  cleanUp
-  createDirs
-  downloadSrc
-  unzipBundle
-  applyPatches
+  # cleanUp
+  # createDirs
+  # downloadSrc
+  # unzipBundle
+  # applyPatches
   compileSrcForAllArchs
-  buildUniversalLib
-  moveHeadersToFramework
-  buildFrameworkPlist
+  # buildUniversalLib
+  # moveHeadersToFramework
+  # buildFrameworkPlist
   echo "Completed successfully.."
 else
   echo "Build failed..."
