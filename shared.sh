@@ -6,6 +6,9 @@
 : ${BUILD_DIR:=`pwd`/build}
 : ${FRAMEWORK_DIR:=`pwd`/framework}
 
+# build architectures
+BUILD_ARCHS="i386 armv7s armv7"
+
 # XCode directories
 : ${XCODE_ROOT:=`xcode-select -print-path`}
 XCODE_SIMULATOR=$XCODE_ROOT/Platforms/iPhoneSimulator.platform/Developer
@@ -192,8 +195,7 @@ downloadSrc() {
 }
 
 compileSrcForAllArchs() {
-  buildArchs="i386 armv7s armv7"
-  for buildArch in $buildArchs
+  for buildArch in $BUILD_ARCHS
   do
     exportConfig $buildArch
     compileSrcForArch $buildArch

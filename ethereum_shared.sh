@@ -13,7 +13,7 @@ exportConfig() {
   else
     IOS_SYSROOT=$XCODE_DEVICE_SDK
   fi
-  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$CRYPTOPP_DIR -I$INCLUDE_DIR -std=gnu++11 -stdlib=libc++ -Wno-constexpr-not-const"
+  CXXFLAGS="-arch $IOS_ARCH -fPIC -g -Os -pipe --sysroot=$IOS_SYSROOT -I$CRYPTOPP_DIR -I$INCLUDE_DIR -std=c++11 -stdlib=libc++ -Wno-constexpr-not-const"
   CFLAGS="-arch $IOS_ARCH -g -Os -pipe --sysroot=$IOS_SYSROOT -DUSE_NUM_GMP -DUSE_FIELD_GMP -DUSE_FIELD_INV_NUM -I$GMP_DIR"
   if [ "$IOS_ARCH" == "armv7s" ] || [ "$IOS_ARCH" == "armv7" ]; then
     CXXFLAGS="$CXXFLAGS -mios-version-min=6.0"

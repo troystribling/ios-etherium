@@ -1,5 +1,5 @@
 --- src/GNUmakefile	2013-02-20 15:30:52.000000000 -0800
-+++ GNUmakefile-ios	2014-04-14 08:18:38.000000000 -0700
++++ GNUmakefile	2014-05-03 16:03:07.000000000 -0700
 @@ -5,7 +5,7 @@
  # the following options reduce code size, but breaks link or makes link very slow on some systems
  # CXXFLAGS += -ffunction-sections -fdata-sections
@@ -60,7 +60,7 @@
 +ifeq ($(IS_IOS),1)
 +  CXX = clang++
 +
-+  CXXFLAGS = -DNDEBUG -g -Os -pipe -fPIC -DCRYPTOPP_DISABLE_ASM -arch $(IOS_ARCH)
++  CXXFLAGS = -DNDEBUG -g -Os -pipe -fPIC -DCRYPTOPP_DISABLE_ASM -arch $(IOS_ARCH) -std=c++11 -stdlib=libc++ -Wno-string-plus-int -Wno-shift-op-parentheses -Wno-deprecated-register -Wno-switch -Wno-c++11-narrowing
 +  ifeq ($(IOS_ARCH),armv7s)
 +    CXXFLAGS += -mios-version-min=6.0
 +  endif
