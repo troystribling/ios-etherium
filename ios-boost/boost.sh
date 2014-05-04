@@ -44,7 +44,7 @@
 : ${XCODE_ROOT:=`xcode-select -print-path`}
 : ${COMPILER:=clang++}
 BOOST_TARBALL=$TARBALLDIR/boost_$BOOST_VERSION.tar.bz2
-    BOOST_SRC=$SRCDIR/boost_${BOOST_VERSION}
+BOOST_SRC=$SRCDIR/boost_${BOOST_VERSION}
 
 #===============================================================================
 
@@ -242,18 +242,23 @@ scrunchAllLibsTogetherInOneLibPerPlatform()
     echo "Decomposing each architecture's .a files"
     for NAME in $ALL_LIBS; do
         echo Decomposing $NAME...
-        (cd $BUILDDIR/armv7/obj; ar -x ../$NAME );
-        (cd $BUILDDIR/armv7s/obj; ar -x ../$NAME );
-        (cd $BUILDDIR/i386/obj; ar -x ../$NAME );
+        mkdir -p $BUILDDIR/armv7/obj/$NAME
+        mkdir -p $BUILDDIR/armv7s/obj/$NAME
+        mkdir -p $BUILDDIR/i386/obj/$NAME
+        (cd $BUILDDIR/armv7/obj/$NAME; ar -x ../../$NAME );
+        (cd $BUILDDIR/armv7s/obj/$NAME; ar -x ../../$NAME );
+        (cd $BUILDDIR/i386/obj/$NAME; ar -x ../../$NAME );
     done
 
     echo "Linking each architecture into an uberlib ($ALL_LIBS => libboost.a )"
-    echo ...armv7
-    (cd $BUILDDIR/armv7; $ARM_DEV_DIR/ar crus libboost.a obj/*.o; )
-    echo ...armv7s
-    (cd $BUILDDIR/armv7s; $ARM_DEV_DIR/ar crus libboost.a obj/*.o; )
-    echo ...i386
-    (cd $BUILDDIR/i386;  $ARM_DEV_DIR/ar crus libboost.a obj/*.o; )
+    for NAME in $ALL_LIBS; do
+        echo ...armv7
+        (cd $BUILDDIR/armv7; $ARM_DEV_DIR/ar crus libboost.a obj/$NAME/*.o; )
+        echo ...armv7s
+        (cd $BUILDDIR/armv7s; $ARM_DEV_DIR/ar crus libboost.a obj/$NAME/*.o; )
+        echo ...i386
+        (cd $BUILDDIR/i386;  $ARM_DEV_DIR/ar crus libboost.a obj/$NAME/*.o; )
+    done
 }
 
 #===============================================================================
@@ -330,7 +335,7 @@ EOF
 # Execution starts here
 #===============================================================================
 
-mkdir -p $BUILDDIR
+# mkdir -p $BUILDDIR
 
 case $BOOST_VERSION in
     1_53_0 )
